@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AUF TRIP - Cari tiket pesawat, hotel, paket wisata & sewa mobil murah." />
+  <title>AUF TRIP - Promo Tiket Pesawat, Hotel & Paket Wisata Murah</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">✈️</span> AUF<span>TRIP</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="pages/flights.html">Tiket Pesawat</a>
+        <a href="pages/hotels.html">Hotel</a>
+        <a href="pages/packages.html">Paket Wisata</a>
+        <a href="pages/cars.html">Sewa Mobil</a>
+      </nav>
+      <button class="btn-login">Masuk</button>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1>Cari Tiket & Hotel Murah <br>di <span>AUF TRIP</span></h1>
+      <p>Bandingkan harga dari tiket.com, dapatkan promo terbaik untuk liburanmu.</p>
+
+      <div class="search-box">
+        <div class="search-tabs">
+          <button class="tab active" data-tab="flights">✈️ Pesawat</button>
+          <button class="tab" data-tab="hotels">🏨 Hotel</button>
+          <button class="tab" data-tab="packages">🎒 Paket</button>
+          <button class="tab" data-tab="cars">🚗 Mobil</button>
+        </div>
+
+        <form class="search-form active" id="form-flights">
+          <div class="form-row">
+            <div class="form-group"><label>Dari</label><input type="text" placeholder="Jakarta (CGK)" /></div>
+            <div class="form-group"><label>Ke</label><input type="text" placeholder="Bali (DPS)" /></div>
+            <div class="form-group"><label>Berangkat</label><input type="date" /></div>
+            <div class="form-group"><label>Penumpang</label>
+              <select><option>1 Dewasa</option><option>2 Dewasa</option><option>3 Dewasa</option></select>
+            </div>
+          </div>
+          <button type="submit" class="btn-search">🔍 Cari Tiket</button>
+        </form>
+
+        <form class="search-form" id="form-hotels">
+          <div class="form-row">
+            <div class="form-group"><label>Kota / Hotel</label><input type="text" placeholder="Bali" /></div>
+            <div class="form-group"><label>Check-in</label><input type="date" /></div>
+            <div class="form-group"><label>Check-out</label><input type="date" /></div>
+          </div>
+          <button type="submit" class="btn-search">🔍 Cari Hotel</button>
+        </form>
+
+        <form class="search-form" id="form-packages">
+          <div class="form-row">
+            <div class="form-group"><label>Destinasi</label><input type="text" placeholder="Yogyakarta" /></div>
+            <div class="form-group"><label>Tanggal</label><input type="date" /></div>
+          </div>
+          <button type="submit" class="btn-search">🔍 Cari Paket</button>
+        </form>
+
+        <form class="search-form" id="form-cars">
+          <div class="form-row">
+            <div class="form-group"><label>Lokasi</label><input type="text" placeholder="Bandara" /></div>
+            <div class="form-group"><label>Tanggal</label><input type="date" /></div>
+          </div>
+          <button type="submit" class="btn-search">🔍 Cari Mobil</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container features-grid">
+      <div class="feature-card"><div class="feature-icon">💰</div><h3>Harga Termurah</h3><p>Bandingkan harga dari berbagai maskapai & hotel terpercaya.</p></div>
+      <div class="feature-card"><div class="feature-icon">⚡</div><h3>Booking Cepat</h3><p>Proses pemesanan hanya dalam hitungan menit.</p></div>
+      <div class="feature-card"><div class="feature-icon">🔒</div><h3>Aman & Terpercaya</h3><p>Partner resmi tiket.com dengan pembayaran aman.</p></div>
+      <div class="feature-card"><div class="feature-icon">🎁</div><h3>Promo Setiap Hari</h3><p>Diskon & cashback eksklusif untuk pengguna AUF TRIP.</p></div>
+    </div>
+  </section>
+
+  <section class="destinations">
+    <div class="container">
+      <div class="section-header"><h2>Destinasi Populer 🏝️</h2><p>Pilihan favorit traveler Indonesia</p></div>
+      <div class="dest-grid">
+        <a href="pages/flights.html" class="dest-card"><img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600" alt="Bali" /><div class="dest-info"><h3>Bali</h3><p>Mulai Rp 750.000</p></div></a>
+        <a href="pages/flights.html" class="dest-card"><img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=600" alt="Yogyakarta" /><div class="dest-info"><h3>Yogyakarta</h3><p>Mulai Rp 450.000</p></div></a>
+        <a href="pages/flights.html" class="dest-card"><img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=600" alt="Labuan Bajo" /><div class="dest-info"><h3>Labuan Bajo</h3><p>Mulai Rp 1.200.000</p></div></a>
+        <a href="pages/flights.html" class="dest-card"><img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600" alt="Lombok" /><div class="dest-info"><h3>Lombok</h3><p>Mulai Rp 850.000</p></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="promo">
+    <div class="container">
+      <div class="section-header"><h2>Promo Spesial 🔥</h2><p>Jangan sampai kelewatan!</p></div>
+      <div class="promo-grid">
+        <div class="promo-card promo-blue"><span class="promo-badge">DISKON 30%</span><h3>Tiket Pesawat Domestik</h3><p>Berlaku untuk semua maskapai partner</p><a href="pages/flights.html" class="btn-promo">Klaim Promo →</a></div>
+        <div class="promo-card promo-orange"><span class="promo-badge">CASHBACK 20%</span><h3>Booking Hotel Bintang 4</h3><p>Min. transaksi Rp 500.000</p><a href="pages/hotels.html" class="btn-promo">Klaim Promo →</a></div>
+        <div class="promo-card promo-green"><span class="promo-badge">GRATIS 1 HARI</span><h3>Sewa Mobil 3 Hari</h3><p>Berlaku di seluruh Indonesia</p><a href="pages/cars.html" class="btn-promo">Klaim Promo →</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container cta-content">
+      <h2>Siap Liburan Lebih Hemat? ✈️</h2>
+      <p>Dapatkan penawaran eksklusif dari tiket.com melalui AUF TRIP</p>
+      <a href="https://www.tiket.com" target="_blank" rel="noopener" class="btn-cta">Kunjungi Tiket.com →</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div><h3 class="logo-footer">✈️ AUF<span>TRIP</span></h3><p>Website affiliate travel yang membantu Anda menemukan promo tiket pesawat, hotel, paket wisata, dan sewa mobil terbaik di Indonesia.</p></div>
+      <div><h4>Layanan</h4><ul><li><a href="pages/flights.html">Tiket Pesawat</a></li><li><a href="pages/hotels.html">Hotel</a></li><li><a href="pages/packages.html">Paket Wisata</a></li><li><a href="pages/cars.html">Sewa Mobil</a></li></ul></div>
+      <div><h4>Perusahaan</h4><ul><li><a href="#">Tentang Kami</a></li><li><a href="#">Blog</a></li><li><a href="#">Kontak</a></li></ul></div>
+      <div><h4>Ikuti Kami</h4><div class="socials"><a href="#">📘</a><a href="#">📷</a><a href="#">🐦</a><a href="#">📺</a></div></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 AUF TRIP. Affiliate Partner of <a href="https://www.tiket.com" target="_blank">tiket.com</a></p></div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/search.js"></script>
+</body>
+</html>
