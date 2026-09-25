@@ -1,0 +1,46 @@
+/* ===== TABLET ===== */
+@media (max-width: 992px) {
+  .hero h1 { font-size: 34px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .nav {
+    position: fixed;
+    top: 72px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 72px);
+    background: #fff;
+    flex-direction: column;
+    padding: 30px 24px;
+    gap: 20px;
+    transition: 0.3s;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+  }
+  .nav.open { left: 0; }
+  .hamburger { display: flex; }
+  .btn-login { display: none; }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  .container { padding: 0 16px; }
+  .hero { padding: 40px 0; min-height: auto; }
+  .hero h1 { font-size: 26px; }
+  .hero > .container > p { font-size: 14px; }
+  .search-box { padding: 18px; border-radius: 14px; }
+  .search-tabs { gap: 4px; }
+  .tab { padding: 8px 12px; font-size: 12px; }
+  .form-row { grid-template-columns: 1fr; }
+  .section-header h2 { font-size: 24px; }
+  .cta h2 { font-size: 24px; }
+  .dest-card { height: 220px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+}
+
+/* ===== HAMBURGER ANIMASI ===== */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
