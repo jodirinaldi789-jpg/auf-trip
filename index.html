@@ -39,805 +39,150 @@
       --max: 1160px;
     }
 
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body { margin: 0; color: var(--ink); background: var(--surface); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    body.menu-open { overflow: hidden; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    button { cursor: pointer; }
+    :focus-visible { outline: 3px solid #70b5ff; outline-offset: 3px; }
 
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 88px;
-    }
+    .container { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
+    .skip-link { position: fixed; left: 14px; top: -60px; z-index: 100; padding: 10px 14px; color: #fff; background: var(--brand-strong); border-radius: 10px; font-weight: 800; }
+    .skip-link:focus { top: 14px; }
 
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--surface);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
+    .site-header { position: sticky; top: 0; z-index: 40; background: rgba(255, 255, 255, .93); border-bottom: 1px solid rgba(220, 229, 241, .9); backdrop-filter: blur(16px); }
+    .nav-bar { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--brand); font-size: 1.22rem; font-weight: 950; letter-spacing: -.045em; white-space: nowrap; }
+    .brand-mark { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 12px; color: #fff; background: linear-gradient(135deg, var(--brand), #1c86df); box-shadow: 0 8px 18px rgba(7, 59, 143, .25); font-size: 1.1rem; }
+    .nav-links { display: flex; align-items: center; gap: 26px; color: #425675; font-size: .93rem; font-weight: 750; }
+    .nav-links a { transition: color .2s ease; }
+    .nav-links a:hover { color: var(--brand); }
+    .header-action, .button { display: inline-flex; align-items: center; justify-content: center; border: 1px solid transparent; border-radius: 11px; padding: 11px 17px; color: #fff; background: var(--brand); box-shadow: 0 8px 18px rgba(7, 59, 143, .18); font-weight: 850; transition: transform .2s ease, background .2s ease, box-shadow .2s ease; }
+    .header-action:hover, .button:hover { background: var(--brand-strong); transform: translateY(-2px); box-shadow: 0 11px 23px rgba(7, 59, 143, .24); }
+    .menu-toggle { display: none; border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; color: var(--brand); background: #fff; font-size: 1.2rem; }
 
-    body.menu-open {
-      overflow: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button,
-    input,
-    select,
-    textarea {
-      font: inherit;
-    }
-
-    button {
-      cursor: pointer;
-    }
-
-    :focus-visible {
-      outline: 3px solid #70b5ff;
-      outline-offset: 3px;
-    }
-
-    .container {
-      width: min(var(--max), calc(100% - 40px));
-      margin-inline: auto;
-    }
-
-    .skip-link {
-      position: fixed;
-      left: 14px;
-      top: -60px;
-      z-index: 100;
-      padding: 10px 14px;
-      color: #fff;
-      background: var(--brand-strong);
-      border-radius: 10px;
-      font-weight: 800;
-    }
-
-    .skip-link:focus {
-      top: 14px;
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      background: rgba(255, 255, 255, .93);
-      border-bottom: 1px solid rgba(220, 229, 241, .9);
-      backdrop-filter: blur(16px);
-    }
-
-    .nav-bar {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 22px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--brand);
-      font-size: 1.22rem;
-      font-weight: 950;
-      letter-spacing: -.045em;
-      white-space: nowrap;
-    }
-
-    .brand-mark {
-      display: grid;
-      place-items: center;
-      width: 36px;
-      height: 36px;
-      border-radius: 12px;
-      color: #fff;
-      background: linear-gradient(135deg, var(--brand), #1c86df);
-      box-shadow: 0 8px 18px rgba(7, 59, 143, .25);
-      font-size: 1.1rem;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 26px;
-      color: #425675;
-      font-size: .93rem;
-      font-weight: 750;
-    }
-
-    .nav-links a {
-      transition: color .2s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--brand);
-    }
-
-    .header-action,
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid transparent;
-      border-radius: 11px;
-      padding: 11px 17px;
-      color: #fff;
-      background: var(--brand);
-      box-shadow: 0 8px 18px rgba(7, 59, 143, .18);
-      font-weight: 850;
-      transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
-    }
-
-    .header-action:hover,
-    .button:hover {
-      background: var(--brand-strong);
-      transform: translateY(-2px);
-      box-shadow: 0 11px 23px rgba(7, 59, 143, .24);
-    }
-
-    .menu-toggle {
-      display: none;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 8px 10px;
-      color: var(--brand);
-      background: #fff;
-      font-size: 1.2rem;
-    }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      color: #fff;
-      background-image:
-        linear-gradient(90deg, rgba(5, 43, 105, .94), rgba(7, 59, 143, .78)),
-        url("https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1920&q=80" );
-      background-position: center;
-      background-size: cover;
-      padding: 92px 0 108px;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 360px;
-      height: 360px;
-      right: -140px;
-      bottom: -210px;
-      border: 1px solid rgba(255, 255, 255, .22);
-      border-radius: 50%;
-      box-shadow:
-        0 0 0 28px rgba(255, 255, 255, .05),
-        0 0 0 58px rgba(255, 255, 255, .035);
-    }
-
-    .hero-grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(320px, .9fr);
-      align-items: center;
-      gap: 64px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 18px;
-      color: #bde2ff;
-      font-size: .76rem;
-      font-weight: 900;
-      letter-spacing: .13em;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 28px;
-      height: 2px;
-      background: var(--accent);
-    }
-
-    h1,
-    h2,
-    h3,
-    p {
+    .hero { position: relative; overflow: hidden; color: #fff; background-image: linear-gradient(90deg, rgba(5, 43, 105, .94), rgba(7, 59, 143, .78)), url("https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1920&q=80"); background-position: center; background-size: cover; padding: 92px 0 108px; }
+    .hero::after { content: ""; position: absolute; width: 360px; height: 360px; right: -140px; bottom: -210px; border: 1px solid rgba(255, 255, 255, .22); border-radius: 50%; box-shadow: 0 0 0 28px rgba(255, 255, 255, .05), 0 0 0 58px rgba(255, 255, 255, .035); }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(320px, .9fr); align-items: center; gap: 64px; }
+    
+    /* PERBAIKAN 1: Style khusus untuk teks PARTNER TRAVELER INDONESIA */
+    .hero-partner-text {
       margin-top: 0;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4 {
-      font-family: Poppins, Inter, sans-serif;
-    }
-
-    h1 {
-      max-width: 720px;
-      margin-bottom: 22px;
-      font-size: clamp(2.55rem, 5vw, 4.8rem);
-      line-height: 1.03;
-      letter-spacing: -.065em;
-    }
-
-    .hero-description {
-      max-width: 625px;
-      margin-bottom: 30px;
-      color: #e1efff;
-      font-size: 1.08rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .button-light {
-      color: var(--brand);
-      background: #fff;
-      box-shadow: none;
-    }
-
-    .button-light:hover {
-      color: var(--brand-strong);
-      background: #edf6ff;
-    }
-
-    .text-link {
-      color: #fff;
-      font-weight: 800;
-    }
-
-    .text-link:hover {
-      text-decoration: underline;
-    }
-
-    .trust-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      margin-top: 28px;
-      color: #d8ecff;
-      font-size: .85rem;
-      font-weight: 700;
-    }
-
-    .trust-row span {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-    }
-
-    .trust-row b {
-      color: #8dd0ff;
-      font-size: 1rem;
-    }
-
-    .planner {
-      padding: 26px;
-      border: 1px solid rgba(255, 255, 255, .28);
-      border-radius: var(--radius-lg);
-      background: rgba(255, 255, 255, .13);
-      box-shadow: 0 25px 60px rgba(0, 25, 72, .22);
-      backdrop-filter: blur(10px);
-    }
-
-    .planner-heading {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-      margin-bottom: 18px;
-    }
-
-    .planner h2 {
-      margin-bottom: 3px;
-      font-size: 1.22rem;
-    }
-
-    .planner-heading p {
-      margin: 0;
-      color: #d5eaff;
-      font-size: .84rem;
-    }
-
-    .planner-badge {
-      padding: 5px 9px;
-      border-radius: 999px;
-      color: #153a62;
-      background: #a9dcff;
-      font-size: .7rem;
+      margin-bottom: 16px;
+      color: #ffffff;
+      font-size: 14px;
       font-weight: 900;
-      white-space: nowrap;
-    }
-
-    .planner-form {
-      display: grid;
-      gap: 12px;
-    }
-
-    .field-label {
-      display: block;
-      margin-bottom: 5px;
-      color: #dff1ff;
-      font-size: .78rem;
-      font-weight: 800;
-    }
-
-    .field-input,
-    .field-select {
-      width: 100%;
-      min-height: 48px;
-      border: 1px solid transparent;
-      border-radius: 10px;
-      padding: 11px 13px;
-      color: var(--ink);
-      background: #fff;
-      outline: none;
-    }
-
-    .field-input:focus,
-    .field-select:focus {
-      border-color: #70b5ff;
-      box-shadow: 0 0 0 3px rgba(112, 181, 255, .25);
-    }
-
-    .planner-submit {
-      min-height: 48px;
-      border: 0;
-      border-radius: 10px;
-      color: #052b69;
-      background: #72c1ff;
-      font-weight: 900;
-      transition: background .2s ease, transform .2s ease;
-    }
-
-    .planner-submit:hover {
-      background: #fff;
-      transform: translateY(-2px);
-    }
-
-    .form-message {
-      min-height: 22px;
-      margin: 4px 0 0;
-      color: #dff1ff;
-      font-size: .83rem;
-    }
-
-    .article-card.is-hidden {
-      display: none;
-    }
-
-    .results-message {
-      margin: 22px 0 0;
-      color: var(--muted);
-      text-align: center;
-      font-size: .9rem;
-    }
-
-    .section {
-      padding: 90px 0;
-    }
-
-    .section-soft {
-      background: var(--surface-soft);
-    }
-
-    .section-header {
-      max-width: 720px;
-      margin: 0 auto 44px;
-      text-align: center;
-    }
-
-    .section-kicker {
-      margin-bottom: 9px;
-      color: #1879ce;
-      font-size: .76rem;
-      font-weight: 900;
-      letter-spacing: .13em;
+      letter-spacing: 2px;
       text-transform: uppercase;
     }
 
-    .section-header h2 {
-      margin-bottom: 12px;
-      color: var(--brand);
-      font-size: clamp(1.9rem, 3vw, 2.75rem);
-      line-height: 1.12;
-      letter-spacing: -.05em;
-    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3, h4 { font-family: Poppins, Inter, sans-serif; }
+    h1 { max-width: 720px; margin-bottom: 22px; font-size: clamp(2.55rem, 5vw, 4.8rem); line-height: 1.03; letter-spacing: -.065em; }
+    .hero-description { max-width: 625px; margin-bottom: 30px; color: #e1efff; font-size: 1.08rem; }
+    .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .button-light { color: var(--brand); background: #fff; box-shadow: none; }
+    .button-light:hover { color: var(--brand-strong); background: #edf6ff; }
+    .text-link { color: #fff; font-weight: 800; }
+    .text-link:hover { text-decoration: underline; }
+    .trust-row { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 28px; color: #d8ecff; font-size: .85rem; font-weight: 700; }
+    .trust-row span { display: inline-flex; align-items: center; gap: 7px; }
+    .trust-row b { color: #8dd0ff; font-size: 1rem; }
 
-    .section-header p {
-      margin-bottom: 0;
-      color: var(--muted);
-    }
+    .planner { padding: 26px; border: 1px solid rgba(255, 255, 255, .28); border-radius: var(--radius-lg); background: rgba(255, 255, 255, .13); box-shadow: 0 25px 60px rgba(0, 25, 72, .22); backdrop-filter: blur(10px); }
+    .planner-heading { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-bottom: 18px; }
+    .planner h2 { margin-bottom: 3px; font-size: 1.22rem; }
+    .planner-heading p { margin: 0; color: #d5eaff; font-size: .84rem; }
+    .planner-badge { padding: 5px 9px; border-radius: 999px; color: #153a62; background: #a9dcff; font-size: .7rem; font-weight: 900; white-space: nowrap; }
+    .planner-form { display: grid; gap: 12px; }
+    .field-label { display: block; margin-bottom: 5px; color: #dff1ff; font-size: .78rem; font-weight: 800; }
+    .field-input, .field-select { width: 100%; min-height: 48px; border: 1px solid transparent; border-radius: 10px; padding: 11px 13px; color: var(--ink); background: #fff; outline: none; }
+    .field-input:focus, .field-select:focus { border-color: #70b5ff; box-shadow: 0 0 0 3px rgba(112, 181, 255, .25); }
+    .planner-submit { min-height: 48px; border: 0; border-radius: 10px; color: #052b69; background: #72c1ff; font-weight: 900; transition: background .2s ease, transform .2s ease; }
+    .planner-submit:hover { background: #fff; transform: translateY(-2px); }
+    .form-message { min-height: 22px; margin: 4px 0 0; color: #dff1ff; font-size: .83rem; }
+    .article-card.is-hidden { display: none; }
+    .results-message { margin: 22px 0 0; color: var(--muted); text-align: center; font-size: .9rem; }
 
-    .about-layout {
-      display: grid;
-      grid-template-columns: .85fr 1.15fr;
-      gap: 28px;
-      align-items: stretch;
-    }
+    .section { padding: 90px 0; }
+    .section-soft { background: var(--surface-soft); }
+    .section-header { max-width: 720px; margin: 0 auto 44px; text-align: center; }
+    .section-kicker { margin-bottom: 9px; color: #1879ce; font-size: .76rem; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
+    .section-header h2 { margin-bottom: 12px; color: var(--brand); font-size: clamp(1.9rem, 3vw, 2.75rem); line-height: 1.12; letter-spacing: -.05em; }
+    .section-header p { margin-bottom: 0; color: var(--muted); }
 
-    .about-card,
-    .value-card {
-      padding: 34px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      background: #fff;
-      box-shadow: var(--shadow-soft);
-    }
+    .about-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 28px; align-items: stretch; }
+    .about-card, .value-card { padding: 34px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: #fff; box-shadow: var(--shadow-soft); }
+    .about-card { background: linear-gradient(145deg, #f1f7ff, #fff); }
+    .about-card h3, .value-card h3 { margin-bottom: 13px; color: var(--brand); font-size: 1.35rem; }
+    .about-card p, .value-card p { color: var(--muted); }
+    .about-card strong { color: var(--brand); }
+    .value-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
+    .value-item { padding: 20px; border: 1px solid var(--line); border-radius: var(--radius-md); background: #fff; }
+    .value-icon { display: grid; place-items: center; width: 42px; height: 42px; margin-bottom: 14px; border-radius: 12px; color: var(--brand); background: var(--brand-soft); font-size: 1.2rem; }
+    .value-item h4 { margin: 0 0 5px; font-size: .98rem; }
+    .value-item p { margin: 0; font-size: .86rem; }
 
-    .about-card {
-      background: linear-gradient(145deg, #f1f7ff, #fff);
-    }
+    .article-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .article-card { display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-lg); background: #fff; box-shadow: var(--shadow-soft); transition: transform .2s ease, box-shadow .2s ease; }
+    .article-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .article-card > img { width: 100%; height: 190px; object-fit: cover; }
+    .article-bar { height: 8px; background: linear-gradient(90deg, var(--brand), #39a4f3); }
+    .article-content { display: flex; flex: 1; flex-direction: column; padding: 28px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 13px; color: #667990; font-size: .76rem; font-weight: 850; letter-spacing: .04em; text-transform: uppercase; }
+    .article-meta span + span::before { content: "•"; margin-right: 10px; color: #9bb0c7; }
+    .article-card h3 { margin-bottom: 12px; color: var(--brand); font-size: 1.35rem; line-height: 1.25; letter-spacing: -.025em; }
+    .article-card p { margin-bottom: 15px; color: var(--muted); font-size: .95rem; }
+    .article-card ul { margin: 0 0 21px; padding-left: 20px; color: var(--muted); font-size: .93rem; }
+    .article-card li + li { margin-top: 7px; }
+    .article-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: auto; padding-top: 19px; border-top: 1px solid var(--line); color: var(--brand); font-size: .84rem; font-weight: 850; }
+    .article-footer a:hover { text-decoration: underline; }
 
-    .about-card h3,
-    .value-card h3 {
-      margin-bottom: 13px;
-      color: var(--brand);
-      font-size: 1.35rem;
-    }
+    .cta-band { padding: 78px 0; background: var(--brand-soft); }
+    .cta-box { display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 37px 40px; border-radius: var(--radius-lg); color: #fff; background: linear-gradient(120deg, var(--brand-strong), #0f72c8); box-shadow: var(--shadow); }
+    .cta-box h2 { margin-bottom: 7px; font-size: clamp(1.6rem, 3vw, 2.35rem); line-height: 1.15; letter-spacing: -.045em; }
+    .cta-box p { margin-bottom: 0; color: #dceeff; }
+    .cta-box .button { flex-shrink: 0; color: var(--brand); background: #fff; box-shadow: none; }
 
-    .about-card p,
-    .value-card p {
-      color: var(--muted);
-    }
-
-    .about-card strong {
-      color: var(--brand);
-    }
-
-    .value-list {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 24px;
-    }
-
-    .value-item {
-      padding: 20px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-md);
-      background: #fff;
-    }
-
-    .value-icon {
-      display: grid;
-      place-items: center;
-      width: 42px;
-      height: 42px;
-      margin-bottom: 14px;
-      border-radius: 12px;
-      color: var(--brand);
-      background: var(--brand-soft);
-      font-size: 1.2rem;
-    }
-
-    .value-item h4 {
-      margin: 0 0 5px;
-      font-size: .98rem;
-    }
-
-    .value-item p {
-      margin: 0;
-      font-size: .86rem;
-    }
-
-    .article-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
-
-    .article-card {
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      background: #fff;
-      box-shadow: var(--shadow-soft);
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-
-    .article-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
-    }
-
-    .article-card > img {
-      width: 100%;
-      height: 190px;
-      object-fit: cover;
-    }
-
-    .article-bar {
-      height: 8px;
-      background: linear-gradient(90deg, var(--brand), #39a4f3);
-    }
-
-    .article-content {
-      display: flex;
-      flex: 1;
-      flex-direction: column;
-      padding: 28px;
-    }
-
-    .article-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 13px;
-      color: #667990;
-      font-size: .76rem;
-      font-weight: 850;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-    }
-
-    .article-meta span + span::before {
-      content: "•";
-      margin-right: 10px;
-      color: #9bb0c7;
-    }
-
-    .article-card h3 {
-      margin-bottom: 12px;
-      color: var(--brand);
-      font-size: 1.35rem;
-      line-height: 1.25;
-      letter-spacing: -.025em;
-    }
-
-    .article-card p {
-      margin-bottom: 15px;
-      color: var(--muted);
-      font-size: .95rem;
-    }
-
-    .article-card ul {
-      margin: 0 0 21px;
-      padding-left: 20px;
-      color: var(--muted);
-      font-size: .93rem;
-    }
-
-    .article-card li + li {
-      margin-top: 7px;
-    }
-
-    .article-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-top: auto;
-      padding-top: 19px;
-      border-top: 1px solid var(--line);
-      color: var(--brand);
-      font-size: .84rem;
-      font-weight: 850;
-    }
-
-    .article-footer a:hover {
-      text-decoration: underline;
-    }
-
-    .cta-band {
-      padding: 78px 0;
-      background: var(--brand-soft);
-    }
-
-    .cta-box {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-      padding: 37px 40px;
-      border-radius: var(--radius-lg);
-      color: #fff;
-      background: linear-gradient(120deg, var(--brand-strong), #0f72c8);
-      box-shadow: var(--shadow);
-    }
-
-    .cta-box h2 {
-      margin-bottom: 7px;
-      font-size: clamp(1.6rem, 3vw, 2.35rem);
-      line-height: 1.15;
-      letter-spacing: -.045em;
-    }
-
-    .cta-box p {
-      margin-bottom: 0;
-      color: #dceeff;
-    }
-
-    .cta-box .button {
-      flex-shrink: 0;
-      color: var(--brand);
-      background: #fff;
-      box-shadow: none;
-    }
-
-    .site-footer {
-      padding: 58px 0 22px;
-      color: #d9eaff;
-      background: #031d46;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.25fr 1fr 1fr 1.35fr;
-      gap: 42px;
-      padding-bottom: 34px;
-    }
-
-    .site-footer h2,
-    .site-footer h3 {
-      margin: 0 0 12px;
-      color: #fff;
-    }
-
-    .site-footer h2 {
-      font-size: 1.22rem;
-    }
-
-    .site-footer h3 {
-      font-size: .98rem;
-    }
-
-    .site-footer p,
-    .site-footer li {
-      color: #b9cce2;
-      font-size: .9rem;
-    }
-
-    .site-footer ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .site-footer li + li {
-      margin-top: 7px;
-    }
-
-    .site-footer a:hover {
-      color: #fff;
-      text-decoration: underline;
-    }
-
-    .disclaimer {
-      padding: 21px 0;
-      border-top: 1px solid rgba(255, 255, 255, .15);
-      border-bottom: 1px solid rgba(255, 255, 255, .15);
-    }
-
-    .disclaimer p {
-      margin: 0;
-      font-size: .8rem;
-    }
-
-    .copyright {
-      margin: 0;
-      padding-top: 18px;
-      color: #93abc8;
-      text-align: center;
-      font-size: .78rem;
-    }
+    .site-footer { padding: 58px 0 22px; color: #d9eaff; background: #031d46; }
+    .footer-grid { display: grid; grid-template-columns: 1.25fr 1fr 1fr 1.35fr; gap: 42px; padding-bottom: 34px; }
+    .site-footer h2, .site-footer h3 { margin: 0 0 12px; color: #fff; }
+    .site-footer h2 { font-size: 1.22rem; }
+    .site-footer h3 { font-size: .98rem; }
+    .site-footer p, .site-footer li { color: #b9cce2; font-size: .9rem; }
+    .site-footer ul { margin: 0; padding: 0; list-style: none; }
+    .site-footer li + li { margin-top: 7px; }
+    .site-footer a:hover { color: #fff; text-decoration: underline; }
+    .disclaimer { padding: 21px 0; border-top: 1px solid rgba(255, 255, 255, .15); border-bottom: 1px solid rgba(255, 255, 255, .15); }
+    .disclaimer p { margin: 0; font-size: .8rem; }
+    .copyright { margin: 0; padding-top: 18px; color: #93abc8; text-align: center; font-size: .78rem; }
 
     @media (max-width: 900px) {
-      .hero-grid,
-      .about-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-grid {
-        gap: 40px;
-      }
-
-      .about-layout {
-        max-width: 720px;
-        margin-inline: auto;
-      }
+      .hero-grid, .about-layout { grid-template-columns: 1fr; }
+      .hero-grid { gap: 40px; }
+      .about-layout { max-width: 720px; margin-inline: auto; }
     }
-
     @media (max-width: 720px) {
-      .container {
-        width: min(100% - 28px, 620px);
-      }
-
-      .nav-bar {
-        min-height: 68px;
-      }
-
-      .menu-toggle {
-        display: inline-flex;
-      }
-
-      .nav-links {
-        position: fixed;
-        inset: 68px 14px auto;
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        padding: 9px;
-        border: 1px solid var(--line);
-        border-radius: 15px;
-        background: #fff;
-        box-shadow: var(--shadow);
-      }
-
-      .nav-links.is-open {
-        display: flex;
-      }
-
-      .nav-links a {
-        padding: 12px 13px;
-        border-radius: 9px;
-      }
-
-      .nav-links a:hover {
-        background: var(--brand-soft);
-      }
-
-      .header-action {
-        display: none;
-      }
-
-      .hero {
-        padding: 66px 0 80px;
-      }
-
-      h1 {
-        font-size: clamp(2.35rem, 12vw, 3.5rem);
-      }
-
-      .section {
-        padding: 66px 0;
-      }
-
-      .value-list,
-      .article-grid,
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .about-card,
-      .value-card,
-      .article-content {
-        padding: 25px 21px;
-      }
-
-      .cta-box {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 29px 23px;
-      }
+      .container { width: min(100% - 28px, 620px); }
+      .nav-bar { min-height: 68px; }
+      .menu-toggle { display: inline-flex; }
+      .nav-links { position: fixed; inset: 68px 14px auto; display: none; flex-direction: column; align-items: stretch; gap: 0; padding: 9px; border: 1px solid var(--line); border-radius: 15px; background: #fff; box-shadow: var(--shadow); }
+      .nav-links.is-open { display: flex; }
+      .nav-links a { padding: 12px 13px; border-radius: 9px; }
+      .nav-links a:hover { background: var(--brand-soft); }
+      .header-action { display: none; }
+      .hero { padding: 66px 0 80px; }
+      h1 { font-size: clamp(2.35rem, 12vw, 3.5rem); }
+      .section { padding: 66px 0; }
+      .value-list, .article-grid, .footer-grid { grid-template-columns: 1fr; }
+      .about-card, .value-card, .article-content { padding: 25px 21px; }
+      .cta-box { align-items: flex-start; flex-direction: column; padding: 29px 23px; }
     }
-
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        transition-duration: .01ms !important;
-        animation-duration: .01ms !important;
-      }
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
     }
   </style>
 
@@ -877,12 +222,7 @@
 
       <a class="header-action" href="#partner" style="background:#ff6b35">Cari Promo</a>
 
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="primary-navigation"
-        aria-label="Buka menu navigasi">☰</button>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Buka menu navigasi">☰</button>
     </div>
   </header>
 
@@ -890,11 +230,10 @@
     <section class="hero" id="beranda" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div>
-          <p class="eyebrow">Partner perjalanan traveler Indonesia</p>
+          <!-- PERBAIKAN 1: Teks Partner dinaikkan, Bold, 14px, Putih, Uppercase -->
+          <p class="hero-partner-text">PARTNER TRAVELER INDONESIA</p>
 
-          <h1 id="hero-title">
-            Wujudkan Liburan Impianmu dengan Budget Terjangkau
-          </h1>
+          <h1 id="hero-title">Wujudkan Liburan Impianmu dengan Budget Terjangkau</h1>
 
           <p class="hero-description">
             𝐀𝐔𝐅 𝐓𝐫𝐢𝐩 menyajikan inspirasi destinasi, panduan praktis, dan tips travel yang membantu Anda membuat keputusan perjalanan dengan lebih percaya diri.
@@ -924,15 +263,8 @@
           <form class="planner-form" id="planner-form">
             <div>
               <label class="field-label" for="destination">Destinasi atau topik</label>
-              <input
-                class="field-input"
-                id="destination"
-                name="destination"
-                type="search"
-                placeholder="Contoh: Bali atau hotel murah"
-                autocomplete="off">
+              <input class="field-input" id="destination" name="destination" type="search" placeholder="Contoh: Bali atau hotel murah" autocomplete="off">
             </div>
-
             <div>
               <label class="field-label" for="travel-type">Yang ingin dicari</label>
               <select class="field-select" id="travel-type" name="travel-type">
@@ -941,7 +273,6 @@
                 <option value="destinasi">Inspirasi destinasi</option>
               </select>
             </div>
-
             <button class="planner-submit" type="submit">Cari di artikel</button>
             <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
           </form>
@@ -967,7 +298,6 @@
               <a class="button" style="padding:8px 10px;font-size:.78rem;background:#ff6b35" href="#kontak">Cari Tiket</a>
             </div>
           </article>
-
           <article class="value-item">
             <div class="value-icon" aria-hidden="true">T</div>
             <h4>Trip.com</h4>
@@ -977,7 +307,6 @@
               <a class="button" style="padding:8px 10px;font-size:.78rem;background:#ff6b35" href="#kontak">Cari Tiket</a>
             </div>
           </article>
-
           <article class="value-item">
             <div class="value-icon" aria-hidden="true">A</div>
             <h4>Agoda</h4>
@@ -987,7 +316,6 @@
               <a class="button" style="padding:8px 10px;font-size:.78rem;background:#ff6b35" href="#kontak">Cari Tiket</a>
             </div>
           </article>
-
           <article class="value-item">
             <div class="value-icon" aria-hidden="true">K</div>
             <h4>Klook</h4>
@@ -998,10 +326,7 @@
             </div>
           </article>
         </div>
-
-        <p style="margin:24px 0 0;color:var(--muted );text-align:center;font-size:.86rem">
-          Kami adalah affiliate partner resmi dari platform di atas.
-        </p>
+        <p style="margin:24px 0 0;color:var(--muted );text-align:center;font-size:.86rem">Kami adalah affiliate partner resmi dari platform di atas.</p>
       </div>
     </section>
 
@@ -1015,83 +340,33 @@
 
         <div class="article-grid">
           <article class="article-card">
-            <img
-              loading="lazy"
-              src="https://images.unsplash.com/photo-1555899434-94d1368aa7af?auto=format&fit=crop&w=900&q=80"
-              alt="Pemandangan kota Jakarta pada sore hari">
-
+            <img loading="lazy" src="https://images.unsplash.com/photo-1555899434-94d1368aa7af?auto=format&fit=crop&w=900&q=80" alt="Pemandangan kota Jakarta pada sore hari">
             <div class="article-bar" aria-hidden="true"></div>
-
             <div class="article-content">
-              <div class="article-meta">
-                <span>Urban escape</span>
-                <span>Jakarta · ★★★★★ 4.9</span>
-              </div>
-
+              <div class="article-meta"><span>Urban escape</span><span>Jakarta · ★★★★★ 4.9</span></div>
               <h3>Jakarta: staycation, kuliner, dan city walk</h3>
-
-              <p>
-                Pilih area dengan akses transportasi mudah untuk menikmati hotel, pusat kuliner, dan ruang kreatif dalam satu perjalanan.
-              </p>
-
-              <div class="article-footer">
-                <span>Destinasi kota</span>
-                <a href="#artikel">Lihat tips →</a>
-              </div>
+              <p>Pilih area dengan akses transportasi mudah untuk menikmati hotel, pusat kuliner, dan ruang kreatif dalam satu perjalanan.</p>
+              <div class="article-footer"><span>Destinasi kota</span><a href="#artikel">Lihat tips →</a></div>
             </div>
           </article>
-
           <article class="article-card">
-            <img
-              loading="lazy"
-              src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=80"
-              alt="Pura dan lanskap tropis Bali">
-
+            <img loading="lazy" src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=80" alt="Pura dan lanskap tropis Bali">
             <div class="article-bar" aria-hidden="true"></div>
-
             <div class="article-content">
-              <div class="article-meta">
-                <span>Pantai &amp; budaya</span>
-                <span>Bali · ★★★★★ 4.9</span>
-              </div>
-
+              <div class="article-meta"><span>Pantai &amp; budaya</span><span>Bali · ★★★★★ 4.9</span></div>
               <h3>Bali: pantai, budaya, dan pengalaman lokal</h3>
-
-              <p>
-                Rencanakan perjalanan seimbang dengan memilih waktu kunjungan, area menginap, dan aktivitas sesuai bujet.
-              </p>
-
-              <div class="article-footer">
-                <span>Destinasi favorit</span>
-                <a href="#artikel">Lihat tips →</a>
-              </div>
+              <p>Rencanakan perjalanan seimbang dengan memilih waktu kunjungan, area menginap, dan aktivitas sesuai bujet.</p>
+              <div class="article-footer"><span>Destinasi favorit</span><a href="#artikel">Lihat tips →</a></div>
             </div>
           </article>
-
           <article class="article-card">
-            <img
-              loading="lazy"
-              src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?auto=format&fit=crop&w=900&q=80"
-              alt="Candi dan suasana budaya Yogyakarta">
-
+            <img loading="lazy" src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?auto=format&fit=crop&w=900&q=80" alt="Candi dan suasana budaya Yogyakarta">
             <div class="article-bar" aria-hidden="true"></div>
-
             <div class="article-content">
-              <div class="article-meta">
-                <span>Heritage trip</span>
-                <span>Yogyakarta · ★★★★★ 4.9</span>
-              </div>
-
+              <div class="article-meta"><span>Heritage trip</span><span>Yogyakarta · ★★★★★ 4.9</span></div>
               <h3>Yogyakarta: budaya, kuliner, dan sejarah</h3>
-
-              <p>
-                Nikmati perjalanan bernilai dengan itinerary sederhana yang menggabungkan wisata budaya, kuliner, dan waktu istirahat.
-              </p>
-
-              <div class="article-footer">
-                <span>Destinasi budaya</span>
-                <a href="#artikel">Lihat tips →</a>
-              </div>
+              <p>Nikmati perjalanan bernilai dengan itinerary sederhana yang menggabungkan wisata budaya, kuliner, dan waktu istirahat.</p>
+              <div class="article-footer"><span>Destinasi budaya</span><a href="#artikel">Lihat tips →</a></div>
             </div>
           </article>
         </div>
@@ -1105,45 +380,19 @@
           <h2 id="about-title">Teman tepercaya untuk rencana liburan Anda</h2>
           <p>Kami menyederhanakan informasi perjalanan agar lebih mudah dipahami dan digunakan.</p>
         </header>
-
         <div class="about-layout">
           <article class="about-card">
             <h3>Siapa kami?</h3>
-
-            <p>
-              <strong>𝐀𝐔𝐅 𝐓𝐫𝐢𝐩</strong> adalah media rekomendasi perjalanan dan tips hemat liburan untuk traveler Indonesia. Kami membahas inspirasi destinasi, hotel, staycation, dan panduan perjalanan secara praktis.
-            </p>
-
-            <p>
-              Tujuan kami adalah membantu Anda merencanakan perjalanan yang lebih hemat, nyaman, dan berkesan melalui informasi yang jelas dan relevan.
-            </p>
-
-            <p>
-              Kami menjaga transparansi dalam setiap rekomendasi dan akan memperbarui informasi ketika harga, promo, atau kebijakan partner berubah.
-            </p>
+            <p><strong>𝐀𝐔𝐅 𝐓𝐫𝐢𝐩</strong> adalah media rekomendasi perjalanan dan tips hemat liburan untuk traveler Indonesia. Kami membahas inspirasi destinasi, hotel, staycation, dan panduan perjalanan secara praktis.</p>
+            <p>Tujuan kami adalah membantu Anda merencanakan perjalanan yang lebih hemat, nyaman, dan berkesan melalui informasi yang jelas dan relevan.</p>
+            <p>Kami menjaga transparansi dalam setiap rekomendasi dan akan memperbarui informasi ketika harga, promo, atau kebijakan partner berubah.</p>
           </article>
-
           <div class="value-card">
             <h3>Yang Anda dapatkan</h3>
-
             <div class="value-list">
-              <article class="value-item">
-                <div class="value-icon" aria-hidden="true">✦</div>
-                <h4>Inspirasi</h4>
-                <p>Ide destinasi dan aktivitas untuk perjalanan berikutnya.</p>
-              </article>
-
-              <article class="value-item">
-                <div class="value-icon" aria-hidden="true">✓</div>
-                <h4>Tips hemat</h4>
-                <p>Strategi sederhana untuk membantu mengatur bujet.</p>
-              </article>
-
-              <article class="value-item">
-                <div class="value-icon" aria-hidden="true">⌕</div>
-                <h4>Panduan praktis</h4>
-                <p>Informasi ringkas yang mudah diterapkan traveler.</p>
-              </article>
+              <article class="value-item"><div class="value-icon" aria-hidden="true">✦</div><h4>Inspirasi</h4><p>Ide destinasi dan aktivitas untuk perjalanan berikutnya.</p></article>
+              <article class="value-item"><div class="value-icon" aria-hidden="true">✓</div><h4>Tips hemat</h4><p>Strategi sederhana untuk membantu mengatur bujet.</p></article>
+              <article class="value-item"><div class="value-icon" aria-hidden="true">⌕</div><h4>Panduan praktis</h4><p>Informasi ringkas yang mudah diterapkan traveler.</p></article>
             </div>
           </div>
         </div>
@@ -1157,149 +406,48 @@
           <h2 id="article-title">Tips &amp; Panduan Traveling Hemat</h2>
           <p>Mulai dari strategi memesan hotel sampai ide staycation hemat di Jakarta.</p>
         </header>
-
         <div class="article-grid">
-          <article
-            class="article-card"
-            data-topic="hotel"
-            data-search="hotel booking murah agoda pemula harga promo kupon fasilitas ulasan pembatalan">
-
+          <article class="article-card" data-topic="hotel" data-search="hotel booking murah agoda pemula harga promo kupon fasilitas ulasan pembatalan">
             <div class="article-bar" aria-hidden="true"></div>
-
             <div class="article-content">
-              <div class="article-meta">
-                <span>Tips hotel</span>
-                <span>3 Oktober 2026</span>
-              </div>
-
+              <div class="article-meta"><span>Tips hotel</span><span>3 Oktober 2026</span></div>
               <h3>5 Cara Booking Hotel Murah di Jakarta Pusat untuk Traveler Pemula</h3>
-
-              <p>
-                Harga murah tetap bisa memberikan pengalaman nyaman jika Anda membandingkan pilihan dengan teliti dan memanfaatkan fitur yang tersedia. Jakarta Pusat memiliki banyak pilihan hotel untuk berbagai kebutuhan dan bujet. Dengan merencanakan tanggal, lokasi, serta fasilitas sejak awal, traveler pemula dapat menghemat biaya tanpa mengorbankan kenyamanan.
-              </p>
-
-              <ul>
-                <li>Bandingkan harga, lokasi, fasilitas, dan ulasan tamu.</li>
-                <li>Periksa promo, kupon, serta kebijakan pembatalan.</li>
-                <li>Pesan pada waktu yang sesuai dengan rencana perjalanan.</li>
-              </ul>
-
-              <div class="article-footer">
-                <span>Oleh Jodi Rinaldi</span>
-                <a
-                  href="mailto:jodirinaldi189@gmail.com?subject=Pertanyaan%20tips%20booking%20hotel"
-                  aria-label="Kirim pertanyaan tentang tips booking hotel melalui email">
-                  Tanya via email →
-                </a>
-              </div>
+              <p>Harga murah tetap bisa memberikan pengalaman nyaman jika Anda membandingkan pilihan dengan teliti dan memanfaatkan fitur yang tersedia. Jakarta Pusat memiliki banyak pilihan hotel untuk berbagai kebutuhan dan bujet. Dengan merencanakan tanggal, lokasi, serta fasilitas sejak awal, traveler pemula dapat menghemat biaya tanpa mengorbankan kenyamanan.</p>
+              <ul><li>Bandingkan harga, lokasi, fasilitas, dan ulasan tamu.</li><li>Periksa promo, kupon, serta kebijakan pembatalan.</li><li>Pesan pada waktu yang sesuai dengan rencana perjalanan.</li></ul>
+              <div class="article-footer"><span>Oleh Jodi Rinaldi</span><a href="mailto:jodirinaldi189@gmail.com?subject=Pertanyaan%20tips%20booking%20hotel" aria-label="Kirim pertanyaan tentang tips booking hotel melalui email">Tanya via email →</a></div>
             </div>
           </article>
-
-          <article
-            class="article-card"
-            data-topic="staycation"
-            data-search="staycation jakarta hemat akhir pekan hotel transportasi sarapan fasilitas weekday weekend">
-
+          <article class="article-card" data-topic="staycation" data-search="staycation jakarta hemat akhir pekan hotel transportasi sarapan fasilitas weekday weekend">
             <div class="article-bar" aria-hidden="true"></div>
-
             <div class="article-content">
-              <div class="article-meta">
-                <span>Staycation</span>
-                <span>4 menit baca</span>
-              </div>
-
+              <div class="article-meta"><span>Staycation</span><span>4 menit baca</span></div>
               <h3>Rekomendasi Staycation Hemat di Jakarta</h3>
-
-              <p>
-                Staycation tidak harus mahal. Dengan lokasi dan fasilitas yang tepat, akhir pekan di Jakarta tetap bisa terasa nyaman.
-              </p>
-
-              <ul>
-                <li>Pilih area dengan akses transportasi umum yang mudah.</li>
-                <li>Cari paket yang sudah termasuk sarapan atau fasilitas rekreasi.</li>
-                <li>Bandingkan harga weekday dan weekend sebelum memesan.</li>
-              </ul>
-
-              <div class="article-footer">
-                <span>Oleh Jodi Rinaldi</span>
-                <a
-                  href="mailto:jodirinaldi189@gmail.com?subject=Pertanyaan%20staycation%20Jakarta"
-                  aria-label="Kirim pertanyaan tentang staycation Jakarta melalui email">
-                  Tanya via email →
-                </a>
-              </div>
+              <p>Staycation tidak harus mahal. Dengan lokasi dan fasilitas yang tepat, akhir pekan di Jakarta tetap bisa terasa nyaman.</p>
+              <ul><li>Pilih area dengan akses transportasi umum yang mudah.</li><li>Cari paket yang sudah termasuk sarapan atau fasilitas rekreasi.</li><li>Bandingkan harga weekday dan weekend sebelum memesan.</li></ul>
+              <div class="article-footer"><span>Oleh Jodi Rinaldi</span><a href="mailto:jodirinaldi189@gmail.com?subject=Pertanyaan%20staycation%20Jakarta" aria-label="Kirim pertanyaan tentang staycation Jakarta melalui email">Tanya via email →</a></div>
             </div>
           </article>
-
-          <article
-            class="article-card"
-            data-topic="destinasi"
-            data-search="tiket pesawat promo bali pesawat bali penerbangan harga murah fleksibel tanggal">
-
+          <article class="article-card" data-topic="destinasi" data-search="tiket pesawat promo bali pesawat bali penerbangan harga murah fleksibel tanggal">
             <div class="article-bar" aria-hidden="true"></div>
-
             <div class="article-content">
-              <div class="article-meta">
-                <span>Tiket pesawat</span>
-                <span>6 menit baca</span>
-              </div>
-
+              <div class="article-meta"><span>Tiket pesawat</span><span>6 menit baca</span></div>
               <h3>Cara Mendapatkan Tiket Pesawat Promo ke Bali</h3>
-
-              <p>
-                Harga tiket berubah-ubah. Fleksibilitas tanggal dan kebiasaan membandingkan pilihan dapat membantu Anda menemukan jadwal yang lebih sesuai bujet.
-              </p>
-
-              <ul>
-                <li>Bandingkan beberapa tanggal keberangkatan.</li>
-                <li>Periksa bagasi, transit, dan aturan perubahan jadwal.</li>
-                <li>Pesan dari platform resmi dan baca detail sebelum membayar.</li>
-              </ul>
-
-              <div class="article-footer">
-                <span>Oleh Jodi Rinaldi</span>
-                <a href="mailto:jodirinaldi189@gmail.com?subject=Pertanyaan%20tiket%20pesawat">
-                  Tanya via email →
-                </a>
-              </div>
+              <p>Harga tiket berubah-ubah. Fleksibilitas tanggal dan kebiasaan membandingkan pilihan dapat membantu Anda menemukan jadwal yang lebih sesuai bujet.</p>
+              <ul><li>Bandingkan beberapa tanggal keberangkatan.</li><li>Periksa bagasi, transit, dan aturan perubahan jadwal.</li><li>Pesan dari platform resmi dan baca detail sebelum membayar.</li></ul>
+              <div class="article-footer"><span>Oleh Jodi Rinaldi</span><a href="mailto:jodirinaldi189@gmail.com?subject=Pertanyaan%20tiket%20pesawat">Tanya via email →</a></div>
             </div>
           </article>
-
-          <article
-            class="article-card"
-            data-topic="destinasi"
-            data-search="yogyakarta budget 2 juta liburan jogja itinerary budaya kuliner hemat">
-
+          <article class="article-card" data-topic="destinasi" data-search="yogyakarta budget 2 juta liburan jogja itinerary budaya kuliner hemat">
             <div class="article-bar" aria-hidden="true"></div>
-
             <div class="article-content">
-              <div class="article-meta">
-                <span>Panduan destinasi</span>
-                <span>7 menit baca</span>
-              </div>
-
+              <div class="article-meta"><span>Panduan destinasi</span><span>7 menit baca</span></div>
               <h3>Panduan Lengkap Liburan ke Yogyakarta dengan Budget 2 Juta</h3>
-
-              <p>
-                Dengan itinerary yang realistis, pilihan penginapan tepat, dan transportasi efisien, Yogyakarta dapat dinikmati tanpa mengorbankan pengalaman.
-              </p>
-
-              <ul>
-                <li>Susun prioritas tempat dan kelompokkan berdasarkan area.</li>
-                <li>Alokasikan bujet untuk transportasi, makan, dan tiket masuk.</li>
-                <li>Sisakan dana cadangan untuk perubahan rencana.</li>
-              </ul>
-
-              <div class="article-footer">
-                <span>Oleh Jodi Rinaldi</span>
-                <a href="mailto:jodirinaldi189@gmail.com?subject=Pertanyaan%20liburan%20Yogyakarta">
-                  Tanya via email →
-                </a>
-              </div>
+              <p>Dengan itinerary yang realistis, pilihan penginapan tepat, dan transportasi efisien, Yogyakarta dapat dinikmati tanpa mengorbankan pengalaman.</p>
+              <ul><li>Susun prioritas tempat dan kelompokkan berdasarkan area.</li><li>Alokasikan bujet untuk transportasi, makan, dan tiket masuk.</li><li>Sisakan dana cadangan untuk perubahan rencana.</li></ul>
+              <div class="article-footer"><span>Oleh Jodi Rinaldi</span><a href="mailto:jodirinaldi189@gmail.com?subject=Pertanyaan%20liburan%20Yogyakarta">Tanya via email →</a></div>
             </div>
           </article>
         </div>
-
         <p class="results-message" id="results-message" role="status" aria-live="polite"></p>
       </div>
     </section>
@@ -1307,7 +455,7 @@
     <section class="section section-soft" id="kontak-form" aria-labelledby="contact-title">
       <div class="container">
         <header class="section-header">
-          <p class="section-kicker">Kontak Kami</p>
+          <!-- PERBAIKAN 3: Tulisan "Kontak Kami" dihapus dari sini -->
           <h2 id="contact-title">Ada pertanyaan tentang perjalanan?</h2>
           <p>Hubungi tim 𝐀𝐔𝐅 𝐓𝐫𝐢𝐩 melalui email, WhatsApp, atau formulir berikut.</p>
         </header>
@@ -1315,48 +463,19 @@
         <div class="about-layout">
           <article class="about-card">
             <h3>Informasi kontak</h3>
-            <p>
-              Email:
-              <a href="mailto:jodirinaldi189@gmail.com">jodirinaldi189@gmail.com</a>
-            </p>
-            <p>
-              WhatsApp:
-              <a href="tel:+6283808088910">+62 838-0808-8910</a>
-            </p>
+            <p>Email: <a href="mailto:jodirinaldi189@gmail.com">jodirinaldi189@gmail.com</a></p>
+            <p>WhatsApp: <a href="tel:+6283808088910">+62 838-0808-8910</a></p>
             <p>Tim kami berusaha menjawab pertanyaan dan masukan yang masuk dengan sebaik-baiknya.</p>
           </article>
 
           <form class="value-card" id="contact-form">
             <h3>Kirim pesan</h3>
-
             <label class="field-label" style="color:var(--ink )" for="contact-name">Nama</label>
-            <input
-              class="field-input"
-              id="contact-name"
-              name="name"
-              type="text"
-              required
-              placeholder="Nama Anda">
-
+            <input class="field-input" id="contact-name" name="name" type="text" required placeholder="Nama Anda">
             <label class="field-label" style="color:var(--ink);margin-top:12px" for="contact-email">Email</label>
-            <input
-              class="field-input"
-              id="contact-email"
-              name="email"
-              type="email"
-              required
-              placeholder="nama@email.com">
-
+            <input class="field-input" id="contact-email" name="email" type="email" required placeholder="nama@email.com">
             <label class="field-label" style="color:var(--ink);margin-top:12px" for="contact-message">Pesan</label>
-            <textarea
-              class="field-input"
-              id="contact-message"
-              name="message"
-              required
-              rows="4"
-              placeholder="Tulis pertanyaan atau masukan Anda"
-              style="resize:vertical"></textarea>
-
+            <textarea class="field-input" id="contact-message" name="message" required rows="4" placeholder="Tulis pertanyaan atau masukan Anda" style="resize:vertical"></textarea>
             <button class="button" type="submit" style="margin-top:14px">Kirim pesan</button>
             <p class="results-message" id="contact-status" role="status" aria-live="polite"></p>
           </form>
@@ -1384,7 +503,6 @@
           <h2>𝐀𝐔𝐅 𝐓𝐫𝐢𝐩</h2>
           <p>Media rekomendasi perjalanan dan tips hemat liburan untuk traveler Indonesia.</p>
         </div>
-
         <div>
           <h3>Jelajahi</h3>
           <ul>
@@ -1394,7 +512,6 @@
             <li><a href="#tentang">Tentang Kami</a></li>
           </ul>
         </div>
-
         <div>
           <h3>Legal</h3>
           <ul>
@@ -1403,34 +520,24 @@
             <li><a href="#kontak-form">Kontak Kami</a></li>
           </ul>
         </div>
-
         <div>
           <h3>Kontak</h3>
-          <p>
-            <a href="mailto:jodirinaldi189@gmail.com">jodirinaldi189@gmail.com</a>
-          </p>
-          <p>
-            <a href="tel:+6283808088910">WhatsApp: +62 838-0808-8910</a>
-          </p>
+          <p><a href="mailto:jodirinaldi189@gmail.com">jodirinaldi189@gmail.com</a></p>
+          <p><a href="tel:+6283808088910">WhatsApp: +62 838-0808-8910</a></p>
           <p>Silakan hubungi kami untuk pertanyaan dan masukan.</p>
         </div>
       </div>
 
       <div class="disclaimer" id="disclaimer">
-        <p>
-          📢 Affiliate Disclosure: 𝐀𝐔𝐅 𝐓𝐫𝐢𝐩 adalah peserta dalam berbagai program afiliasi termasuk Involve Asia. Kami menerima komisi ketika Anda melakukan pemesanan melalui link affiliate di website ini, tanpa biaya tambahan bagi Anda. Kami hanya merekomendasikan layanan yang kami percayai.
-        </p>
+        <p>📢 Affiliate Disclosure: 𝐀𝐔𝐅 𝐓𝐫𝐢𝐩 adalah peserta dalam berbagai program afiliasi termasuk Involve Asia. Kami menerima komisi ketika Anda melakukan pemesanan melalui link affiliate di website ini, tanpa biaya tambahan bagi Anda. Kami hanya merekomendasikan layanan yang kami percayai.</p>
       </div>
 
       <div class="disclaimer" id="privacy">
-        <p>
-          <strong>Kebijakan Privasi:</strong> 𝐀𝐔𝐅 𝐓𝐫𝐢𝐩 menghormati privasi pengunjung. Data yang dikirim melalui email atau formulir digunakan untuk menjawab pertanyaan dan tidak dijual kepada pihak lain.
-        </p>
+        <p><strong>Kebijakan Privasi:</strong> 𝐀𝐔𝐅 𝐓𝐫𝐢𝐩 menghormati privasi pengunjung. Data yang dikirim melalui email atau formulir digunakan untuk menjawab pertanyaan dan tidak dijual kepada pihak lain.</p>
       </div>
 
-      <p class="copyright">
-        © 2026 𝐀𝐔𝐅 𝐓𝐫𝐢𝐩. Dibuat dengan ❤️ oleh Jodi Rinaldi. All Rights Reserved.
-      </p>
+      <!-- PERBAIKAN 2: Nama Jodi Rinaldi dihapus dari copyright -->
+      <p class="copyright">© 2026 𝐀𝐔𝐅 𝐓𝐫𝐢𝐩. All Rights Reserved.</p>
     </div>
   </footer>
 
@@ -1448,13 +555,8 @@
       if (toggle && nav) {
         toggle.addEventListener('click', function () {
           const open = toggle.getAttribute('aria-expanded') === 'true';
-
           toggle.setAttribute('aria-expanded', String(!open));
-          toggle.setAttribute(
-            'aria-label',
-            open ? 'Buka menu navigasi' : 'Tutup menu navigasi'
-          );
-
+          toggle.setAttribute('aria-label', open ? 'Buka menu navigasi' : 'Tutup menu navigasi');
           nav.classList.toggle('is-open', !open);
           document.body.classList.toggle('menu-open', !open);
         });
@@ -1476,11 +578,7 @@
         });
 
         document.addEventListener('click', function (event) {
-          if (
-            nav.classList.contains('is-open') &&
-            !nav.contains(event.target) &&
-            !toggle.contains(event.target)
-          ) {
+          if (nav.classList.contains('is-open') && !nav.contains(event.target) && !toggle.contains(event.target)) {
             toggle.click();
           }
         });
@@ -1492,12 +590,8 @@
       if (contactForm && contactStatus) {
         contactForm.addEventListener('submit', function (event) {
           event.preventDefault();
-
           alert('Pesan Anda telah terkirim!');
-
-          contactStatus.textContent =
-            'Pesan terkirim! Terima kasih, tim 𝐀𝐔𝐅 𝐓𝐫𝐢𝐩 akan menindaklanjuti melalui email.';
-
+          contactStatus.textContent = 'Pesan terkirim! Terima kasih, tim 𝐀𝐔𝐅 𝐓𝐫𝐢𝐩 akan menindaklanjuti melalui email.';
           contactForm.reset();
         });
       }
@@ -1505,40 +599,22 @@
       if (form && destination && type && message && resultMessage && cards.length) {
         form.addEventListener('submit', function (event) {
           event.preventDefault();
-
           const value = destination.value.trim();
           const selectedType = type.value;
           const query = (value + ' ' + selectedType).toLowerCase().trim();
           let visible = 0;
 
           cards.forEach(function (card) {
-            const matches =
-              !value ||
-              card.dataset.search.includes(query) ||
-              card.dataset.topic === selectedType;
-
+            const matches = !value || card.dataset.search.includes(query) || card.dataset.topic === selectedType;
             card.classList.toggle('is-hidden', !matches);
-
-            if (matches) {
-              visible += 1;
-            }
+            if (matches) visible += 1;
           });
 
-          message.textContent = value
-            ? 'Menampilkan artikel yang paling relevan untuk "' + value + '".'
-            : 'Menampilkan artikel berdasarkan kategori pilihan Anda.';
+          message.textContent = value ? 'Menampilkan artikel yang paling relevan untuk "' + value + '".' : 'Menampilkan artikel berdasarkan kategori pilihan Anda.';
+          resultMessage.textContent = visible + ' artikel tersedia. Jika membutuhkan bantuan, silakan hubungi kami melalui email.';
 
-          resultMessage.textContent =
-            visible +
-            ' artikel tersedia. Jika membutuhkan bantuan, silakan hubungi kami melalui email.';
-
-          const reduceMotion =
-            window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-          document.querySelector('#artikel').scrollIntoView({
-            behavior: reduceMotion ? 'auto' : 'smooth',
-            block: 'start'
-          });
+          const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          document.querySelector('#artikel').scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
         });
       }
     }());
