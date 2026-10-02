@@ -67,7 +67,6 @@
     .hero::after { content: ""; position: absolute; width: 360px; height: 360px; right: -140px; bottom: -210px; border: 1px solid rgba(255, 255, 255, .22); border-radius: 50%; box-shadow: 0 0 0 28px rgba(255, 255, 255, .05), 0 0 0 58px rgba(255, 255, 255, .035); }
     .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(320px, .9fr); align-items: center; gap: 64px; }
     
-    /* PERBAIKAN 1: Style khusus untuk teks PARTNER TRAVELER INDONESIA */
     .hero-partner-text {
       margin-top: 0;
       margin-bottom: 16px;
@@ -80,7 +79,10 @@
 
     h1, h2, h3, p { margin-top: 0; }
     h1, h2, h3, h4 { font-family: Poppins, Inter, sans-serif; }
+    
+    /* Default h1 style, akan di-override inline di HTML untuk hero-title */
     h1 { max-width: 720px; margin-bottom: 22px; font-size: clamp(2.55rem, 5vw, 4.8rem); line-height: 1.03; letter-spacing: -.065em; }
+    
     .hero-description { max-width: 625px; margin-bottom: 30px; color: #e1efff; font-size: 1.08rem; }
     .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
     .button-light { color: var(--brand); background: #fff; box-shadow: none; }
@@ -230,10 +232,12 @@
     <section class="hero" id="beranda" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div>
-          <!-- PERBAIKAN 1: Teks Partner dinaikkan, Bold, 14px, Putih, Uppercase -->
           <p class="hero-partner-text">PARTNER TRAVELER INDONESIA</p>
 
-          <h1 id="hero-title">Wujudkan Liburan Impianmu dengan Budget Terjangkau</h1>
+          <!-- PERBAIKAN: Font size sama dengan paragraf di bawahnya (1.08rem) dan tidak bold (400) -->
+          <h1 id="hero-title" style="font-size: 1.08rem; font-weight: 400; line-height: 1.65; letter-spacing: normal;">
+            Wujudkan Liburan Impianmu dengan Budget Terjangkau
+          </h1>
 
           <p class="hero-description">
             𝐀𝐔𝐅 𝐓𝐫𝐢𝐩 menyajikan inspirasi destinasi, panduan praktis, dan tips travel yang membantu Anda membuat keputusan perjalanan dengan lebih percaya diri.
@@ -241,7 +245,7 @@
 
           <div class="hero-actions">
             <a class="button button-light" href="#destinasi">Mulai Jelajahi</a>
-            <a class="text-link" href="#tentang">Kenali 𝐀𝐔𝐅 𝐓𝐫𝐢𝐩 →</a>
+            <!-- PERBAIKAN: Link "Kenali AUF Trip" sudah dihapus -->
           </div>
 
           <div class="trust-row" aria-label="Keunggulan 𝐀𝐔𝐅 𝐓𝐫𝐢𝐩">
@@ -455,7 +459,6 @@
     <section class="section section-soft" id="kontak-form" aria-labelledby="contact-title">
       <div class="container">
         <header class="section-header">
-          <!-- PERBAIKAN 3: Tulisan "Kontak Kami" dihapus dari sini -->
           <h2 id="contact-title">Ada pertanyaan tentang perjalanan?</h2>
           <p>Hubungi tim 𝐀𝐔𝐅 𝐓𝐫𝐢𝐩 melalui email, WhatsApp, atau formulir berikut.</p>
         </header>
@@ -536,7 +539,6 @@
         <p><strong>Kebijakan Privasi:</strong> 𝐀𝐔𝐅 𝐓𝐫𝐢𝐩 menghormati privasi pengunjung. Data yang dikirim melalui email atau formulir digunakan untuk menjawab pertanyaan dan tidak dijual kepada pihak lain.</p>
       </div>
 
-      <!-- PERBAIKAN 2: Nama Jodi Rinaldi dihapus dari copyright -->
       <p class="copyright">© 2026 𝐀𝐔𝐅 𝐓𝐫𝐢𝐩. All Rights Reserved.</p>
     </div>
   </footer>
