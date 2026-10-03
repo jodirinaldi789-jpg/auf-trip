@@ -114,22 +114,15 @@
         .form-control { width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 10px; font-family: inherit; }
         .form-control:focus { outline: none; border-color: var(--primary); }
 
-        /* LINK WHATSAPP DENGAN EMOJI RESMI */
+        /* PERBAIKAN: Link WhatsApp warna hijau muda */
         .wa-link {
             color: var(--wa-light);
             font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s;
+            transition: color 0.3s;
         }
         .wa-link:hover {
             color: var(--wa-green);
             text-decoration: underline;
-        }
-        .wa-icon {
-            font-size: 1.3rem;
-            line-height: 1;
         }
 
         footer { background: #031d46; color: #d9eaff; padding: 60px 0 20px; }
@@ -158,7 +151,7 @@
 <header>
     <div class="container nav-container">
         <a href="#" class="logo">
-            <div class="logo-icon">✈</div>
+            <div class="logo-icon"></div>
             <span class="brand-text">AUF Trip</span>
         </a>
         <nav class="nav-links" id="navLinks">
@@ -169,7 +162,7 @@
             <a href="#kontak">Kontak</a>
         </nav>
         <a href="#partner" class="btn btn-orange">Cari Promo</a>
-        <button class="menu-toggle" id="menuBtn" aria-label="Menu"></button>
+        <button class="menu-toggle" id="menuBtn" aria-label="Menu">☰</button>
     </div>
 </header>
 
@@ -315,12 +308,7 @@
                 <h2 style="font-size: 1.8rem; margin-bottom: 15px;">Ada pertanyaan tentang perjalanan?</h2>
                 <p style="color: var(--muted); margin-bottom: 30px;">Hubungi tim <span class="brand-text">AUF Trip</span> melalui email atau WhatsApp.</p>
                 <p style="margin-bottom: 15px;"><strong>Email:</strong><br><a href="mailto:jodirinaldi189@gmail.com" style="color: var(--primary);">jodirinaldi189@gmail.com</a></p>
-                <p><strong>WhatsApp:</strong><br>
-                    <a href="https://wa.me/6283808088910" target="_blank" class="wa-link">
-                        <span class="wa-icon"></span>
-                        +62 838-0808-8910
-                    </a>
-                </p>
+                <p><strong>WhatsApp:</strong><br><a href="https://wa.me/6283808088910" target="_blank" class="wa-link">+62 838-0808-8910</a></p>
             </div>
             <form class="card" onsubmit="event.preventDefault(); alert('Pesan terkirim!'); this.reset();">
                 <h3 style="margin-bottom: 20px;">Kirim pesan</h3>
@@ -359,13 +347,7 @@
             </div>
             <div>
                 <h3>Kontak</h3>
-                <p style="font-size: 0.9rem;">
-                    <a href="mailto:jodirinaldi189@gmail.com">jodirinaldi189@gmail.com</a><br>
-                    <a href="https://wa.me/6283808088910" target="_blank" class="wa-link">
-                        <span class="wa-icon"></span>
-                        +62 838-0808-8910
-                    </a>
-                </p>
+                <p style="font-size: 0.9rem;"><a href="mailto:jodirinaldi189@gmail.com">jodirinaldi189@gmail.com</a><br><a href="https://wa.me/6283808088910" target="_blank" class="wa-link">+62 838-0808-8910</a></p>
             </div>
         </div>
         <div class="disclosure" id="dc">
