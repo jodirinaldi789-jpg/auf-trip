@@ -1,626 +1,561 @@
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#073b8f">
-  <meta name="description" content="AUF Trip membantu traveler Indonesia menemukan inspirasi perjalanan, tips hemat, dan rekomendasi hotel serta destinasi yang praktis.">
-  <meta name="author" content="Tim AUF Trip">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="id_ID">
-  <meta property="og:title" content="AUF Trip | Rencanakan Perjalanan dengan Lebih Cerdas">
-  <meta property="og:description" content="Inspirasi destinasi, tips travel, dan panduan liburan hemat untuk traveler Indonesia.">
-  <meta property="og:url" content="https://jodirinaldi789-jpg.github.io/auf-trip/">
-  <meta name="twitter:card" content="summary">
-  <link rel="canonical" href="https://jodirinaldi789-jpg.github.io/auf-trip/">
-  <title>AUF Trip | Rekomendasi Travel & Tiket Murah</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#073b8f">
+<meta name="description" content="AUF Trip menyajikan inspirasi destinasi, tips travel hemat, dan rekomendasi perjalanan untuk traveler Indonesia.">
+<meta property="og:title" content="AUF Trip | Rekomendasi Travel & Tiket Murah">
+<meta property="og:description" content="Inspirasi destinasi dan panduan perjalanan praktis untuk traveler Indonesia.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1200">
+<meta property="og:url" content="https://jodirinaldi789-jpg.github.io/auf-trip/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://jodirinaldi789-jpg.github.io/auf-trip/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+<title>AUF Trip | Rekomendasi Travel & Tiket Murah</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+<style>
+:root{--b:#073b8f;--d:#052b69;--s:#eaf2ff;--o:#ff6b35;--t:#12233f;--m:#5f6f86;--l:#dce5f1;--bg:#f6f9fd;--r:20px;--sh:0 12px 35px #073b8f18}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:78px}
+body{margin:0;color:var(--t );font:16px/1.6 Inter,Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.wrap{width:min(1160px,calc(100% - 32px));margin:auto}
+.skip{position:fixed;top:-60px;left:12px;z-index:99;padding:8px 12px;color:#fff;background:var(--d);border-radius:8px}
+.skip:focus{top:12px}
+header{position:sticky;top:0;z-index:50;background:#fffffff2;border-bottom:1px solid var(--l);backdrop-filter:blur(12px)}
+.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:9px;color:var(--b);font:800 1.15rem Poppins,sans-serif;white-space:nowrap}
+.mark{display:grid;place-items:center;width:34px;height:34px;color:#fff;background:linear-gradient(135deg,var(--b),#1c86df);border-radius:10px}
+.links{display:flex;align-items:center;gap:20px;color:#425675;font-weight:600;font-size:.9rem}
+.links a:hover{color:var(--b)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border:0;border-radius:10px;color:#fff;background:var(--b);font-weight:700;transition:.2s}
+.btn:hover{background:var(--d);transform:translateY(-2px)}
+.orange{background:var(--o)}
+.toggle{display:none;padding:6px 9px;border:1px solid var(--l);border-radius:8px;color:var(--b);background:#fff;font-size:1.2rem}
+.hero{color:#fff;background:linear-gradient(90deg,#052b69f5,#073b8fcc),url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1400' ) center/cover;padding:76px 0}
+.hero-grid{display:grid;grid-template-columns:1fr 380px;gap:50px;align-items:center}
+.eyebrow{margin:0 0 16px;color:#fff;font-size:18px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hero h1{max-width:680px;margin:0 0 18px;font:800 clamp(2.3rem,5vw,4.2rem)/1.08 Poppins,sans-serif;letter-spacing:-.05em}
+.hero p{color:#e1efff}
+.hero-copy{max-width:620px;font-size:1.05rem}
+.trust{display:flex;flex-wrap:wrap;gap:15px;margin-top:24px;color:#d8ecff;font-size:.86rem;font-weight:600}
+.trust b{color:#8dd0ff}
+.search{padding:24px;border:1px solid #ffffff4a;border-radius:var(--r);background:#ffffff1f;box-shadow:0 20px 50px #00194838;backdrop-filter:blur(10px)}
+.search h2{margin:0 0 4px;font:700 1.2rem Poppins,sans-serif}
+.search small{color:#d5eaff}
+.form{display:grid;gap:11px;margin-top:18px}
+.label{display:block;margin-bottom:4px;color:#dff1ff;font-size:.78rem;font-weight:700}
+.input{width:100%;min-height:45px;padding:10px 12px;border:1px solid transparent;border-radius:9px;color:var(--t);background:#fff;outline:0}
+.input:focus{border-color:#70b5ff;box-shadow:0 0 0 3px #70b5ff55}
+.search .btn{width:100%;color:var(--d);background:#72c1ff}
+.message{min-height:21px;margin:4px 0 0;color:#dff1ff;font-size:.8rem}
+.section{padding:76px 0}
+.soft{background:var(--bg)}
+.heading{max-width:720px;margin:0 auto 38px;text-align:center}
+.kicker{margin:0 0 7px;color:#1879ce;font-size:.75rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+.heading h2{margin:0 0 9px;color:var(--b);font:700 clamp(1.8rem,3vw,2.55rem)/1.15 Poppins,sans-serif}
+.heading p{margin:0;color:var(--m)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{padding:23px;border:1px solid var(--l);border-radius:var(--r);background:#fff;box-shadow:var(--sh);transition:.2s}
+.card:hover{transform:translateY(-3px);box-shadow:0 18px 42px #073b8f1d}
+.icon{display:grid;place-items:center;width:40px;height:40px;margin-bottom:12px;border-radius:10px;color:var(--b);background:var(--s);font-weight:900}
+.card h3,.card h4{margin:0 0 8px;color:var(--b);font-family:Poppins,sans-serif}
+.card p{margin:0;color:var(--m);font-size:.9rem}
+.card-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.card-actions .btn{padding:7px 10px;font-size:.75rem}
+.affiliate-note{text-align:center;color:var(--m);font-size:.85rem}
+.dest-grid,.article-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.article-grid{grid-template-columns:repeat(2,1fr)}
+.image-card{padding:0;overflow:hidden}
+.image-card img{display:block;width:100%;height:180px;object-fit:cover}
+.image-card .inside{padding:23px}
+.meta{margin-bottom:8px;color:var(--m);font-size:.73rem;font-weight:700;text-transform:uppercase}
+.image-card h3{font-size:1.18rem}
+.image-card p{margin-bottom:17px}
+.read{color:var(--b);font-size:.86rem;font-weight:800}
+.read:hover{text-decoration:underline}
+.about{display:grid;grid-template-columns:1fr 1.2fr;gap:30px;align-items:start}
+.about h2{margin:0 0 15px;color:var(--b);font:700 1.8rem/1.15 Poppins,sans-serif}
+.about p{color:var(--m)}
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.article-card{display:flex;flex-direction:column}
+.article-card .inside{flex:1}
+.article-card ul{margin:0 0 18px;padding-left:20px;color:var(--m);font-size:.9rem}
+.empty{display:block;grid-column:1/-1;text-align:center;color:var(--m)}
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:30px}
+.contact h2{margin:0 0 14px;color:var(--b);font:700 1.8rem/1.15 Poppins,sans-serif}
+.contact p{color:var(--m)}
+.contact .card{box-shadow:none}
+.contact .input{border-color:var(--l);margin-bottom:13px}
+.contact textarea{resize:vertical}
+.cta{padding:65px 0;background:linear-gradient(120deg,var(--d),#0f72c8);color:#fff}
+.cta-box{display:flex;align-items:center;justify-content:space-between;gap:25px}
+.cta h2{margin:0 0 6px;font:700 clamp(1.5rem,3vw,2.2rem)/1.15 Poppins,sans-serif}
+.cta p{margin:0;color:#dceeff}
+.cta .btn{color:var(--b);background:#fff;white-space:nowrap}
+footer{padding:52px 0 20px;color:#d9eaff;background:#031d46}
+.footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1.2fr;gap:28px;margin-bottom:28px}
+footer h2,footer h3{margin:0 0 11px;color:#fff;font-family:Poppins,sans-serif}
+footer h2{font-size:1.2rem}
+footer h3{font-size:1rem}
+footer p,footer li{color:#b9cce2;font-size:.86rem}
+footer ul{margin:0;padding:0;list-style:none}
+footer li{margin-bottom:7px}
+.disclosure{padding:18px 0;border-top:1px solid #ffffff26;font-size:.8rem}
+.disclosure p{margin:0}
+.copyright{margin:18px 0 0;color:#93abc8;text-align:center;font-size:.75rem}
 
-  <style>
-    :root {
-      --brand: #073b8f;
-      --brand-strong: #052b69;
-      --brand-soft: #eaf2ff;
-      --accent: #f6b73c;
-      --ink: #12233f;
-      --muted: #5f6f86;
-      --surface: #ffffff;
-      --surface-soft: #f6f9fd;
-      --line: #dce5f1;
-      --success: #0b7a58;
-      --radius-lg: 24px;
-      --radius-md: 16px;
-      --shadow: 0 16px 45px rgba(7, 59, 143, .12);
-      --shadow-soft: 0 8px 25px rgba(7, 59, 143, .08);
-      --max: 1160px;
-    }
+@media(max-width:900px){
+  .hero-grid,.about,.contact{grid-template-columns:1fr}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
+}
 
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
-    body { margin: 0; color: var(--ink); background: var(--surface); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.65; -webkit-font-smoothing: antialiased; }
-    body.menu-open { overflow: hidden; }
-    a { color: inherit; text-decoration: none; }
-    button, input, select, textarea { font: inherit; }
-    button { cursor: pointer; }
-    :focus-visible { outline: 3px solid #70b5ff; outline-offset: 3px; }
+@media(max-width:720px){
+  .wrap{width:min(100% - 28px,620px)}
+  .links{position:absolute;top:70px;left:14px;right:14px;display:none;flex-direction:column;align-items:stretch;gap:0;padding:10px;border:1px solid var(--l);border-radius:14px;background:#fff;box-shadow:var(--sh)}
+  .links.open{display:flex}
+  .links a{padding:10px}
+  .toggle{display:block}
+  .nav>.orange{display:none}
+  .hero{padding:58px 0}
+  .eyebrow{font-size:15px}
+  .hero h1{font-size:clamp(2.1rem,11vw,3.2rem)}
+  .section{padding:60px 0}
+  .grid,.dest-grid,.article-grid,.values,.footer-grid{grid-template-columns:1fr}
+  .cta-box{align-items:flex-start;flex-direction:column}
+  .cta .btn{white-space:normal}
+}
+</style>
 
-    .container { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
-    .skip-link { position: fixed; left: 14px; top: -60px; z-index: 100; padding: 10px 14px; color: #fff; background: var(--brand-strong); border-radius: 10px; font-weight: 800; }
-    .skip-link:focus { top: 14px; }
-
-    .site-header { position: sticky; top: 0; z-index: 40; background: rgba(255, 255, 255, .93); border-bottom: 1px solid rgba(220, 229, 241, .9); backdrop-filter: blur(16px); }
-    .nav-bar { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
-    .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--brand); font-size: 1.22rem; letter-spacing: -.045em; white-space: nowrap; }
-    .brand-text { font-family: 'Poppins', Inter, sans-serif; font-weight: 900; }
-    .brand-mark { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 12px; color: #fff; background: linear-gradient(135deg, var(--brand), #1c86df); box-shadow: 0 8px 18px rgba(7, 59, 143, .25); font-size: 1.1rem; }
-    .nav-links { display: flex; align-items: center; gap: 26px; color: #425675; font-size: .93rem; font-weight: 750; }
-    .nav-links a { transition: color .2s ease; }
-    .nav-links a:hover { color: var(--brand); }
-    .header-action, .button { display: inline-flex; align-items: center; justify-content: center; border: 1px solid transparent; border-radius: 11px; padding: 11px 17px; color: #fff; background: var(--brand); box-shadow: 0 8px 18px rgba(7, 59, 143, .18); font-weight: 850; transition: transform .2s ease, background .2s ease, box-shadow .2s ease; }
-    .header-action:hover, .button:hover { background: var(--brand-strong); transform: translateY(-2px); box-shadow: 0 11px 23px rgba(7, 59, 143, .24); }
-    .menu-toggle { display: none; border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; color: var(--brand); background: #fff; font-size: 1.2rem; }
-
-    .hero { position: relative; overflow: hidden; color: #fff; background-image: linear-gradient(90deg, rgba(5, 43, 105, .94), rgba(7, 59, 143, .78)), url("https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1920&q=80"); background-position: center; background-size: cover; padding: 92px 0 108px; }
-    .hero::after { content: ""; position: absolute; width: 360px; height: 360px; right: -140px; bottom: -210px; border: 1px solid rgba(255, 255, 255, .22); border-radius: 50%; box-shadow: 0 0 0 28px rgba(255, 255, 255, .05), 0 0 0 58px rgba(255, 255, 255, .035); }
-    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(320px, .9fr); align-items: center; gap: 64px; }
-    
-    .hero-partner-text {
-      margin-top: 0;
-      margin-bottom: 16px;
-      color: #ffffff;
-      font-size: 18px;
-      font-weight: 900;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 100%;
-    }
-
-    h1, h2, h3, p { margin-top: 0; }
-    h1, h2, h3, h4 { font-family: Poppins, Inter, sans-serif; }
-    h1 { max-width: 720px; margin-bottom: 22px; font-size: clamp(2.55rem, 5vw, 4.8rem); line-height: 1.03; letter-spacing: -.065em; }
-    .hero-description { max-width: 625px; margin-bottom: 30px; color: #e1efff; font-size: 1.08rem; }
-    .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
-    .button-light { color: var(--brand); background: #fff; box-shadow: none; }
-    .button-light:hover { color: var(--brand-strong); background: #edf6ff; }
-    .text-link { color: #fff; font-weight: 800; }
-    .text-link:hover { text-decoration: underline; }
-    .trust-row { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 28px; color: #d8ecff; font-size: .85rem; font-weight: 700; }
-    .trust-row span { display: inline-flex; align-items: center; gap: 7px; }
-    .trust-row b { color: #8dd0ff; font-size: 1rem; }
-
-    .planner { padding: 26px; border: 1px solid rgba(255, 255, 255, .28); border-radius: var(--radius-lg); background: rgba(255, 255, 255, .13); box-shadow: 0 25px 60px rgba(0, 25, 72, .22); backdrop-filter: blur(10px); }
-    .planner-heading { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-bottom: 18px; }
-    .planner h2 { margin-bottom: 3px; font-size: 1.22rem; }
-    .planner-heading p { margin: 0; color: #d5eaff; font-size: .84rem; }
-    .planner-badge { padding: 5px 9px; border-radius: 999px; color: #153a62; background: #a9dcff; font-size: .7rem; font-weight: 900; white-space: nowrap; }
-    .planner-form { display: grid; gap: 12px; }
-    .field-label { display: block; margin-bottom: 5px; color: #dff1ff; font-size: .78rem; font-weight: 800; }
-    .field-input, .field-select { width: 100%; min-height: 48px; border: 1px solid transparent; border-radius: 10px; padding: 11px 13px; color: var(--ink); background: #fff; outline: none; }
-    .field-input:focus, .field-select:focus { border-color: #70b5ff; box-shadow: 0 0 0 3px rgba(112, 181, 255, .25); }
-    .planner-submit { min-height: 48px; border: 0; border-radius: 10px; color: #052b69; background: #72c1ff; font-weight: 900; transition: background .2s ease, transform .2s ease; }
-    .planner-submit:hover { background: #fff; transform: translateY(-2px); }
-    .form-message { min-height: 22px; margin: 4px 0 0; color: #dff1ff; font-size: .83rem; }
-    .article-card.is-hidden { display: none; }
-    .results-message { margin: 22px 0 0; color: var(--muted); text-align: center; font-size: .9rem; }
-
-    .section { padding: 90px 0; }
-    .section-soft { background: var(--surface-soft); }
-    .section-header { max-width: 720px; margin: 0 auto 44px; text-align: center; }
-    .section-kicker { margin-bottom: 9px; color: #1879ce; font-size: .76rem; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
-    .section-header h2 { margin-bottom: 12px; color: var(--brand); font-size: clamp(1.9rem, 3vw, 2.75rem); line-height: 1.12; letter-spacing: -.05em; }
-    .section-header p { margin-bottom: 0; color: var(--muted); }
-
-    .about-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 28px; align-items: stretch; }
-    .about-card, .value-card { padding: 34px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: #fff; box-shadow: var(--shadow-soft); }
-    .about-card { background: linear-gradient(145deg, #f1f7ff, #fff); }
-    .about-card h3, .value-card h3 { margin-bottom: 13px; color: var(--brand); font-size: 1.35rem; }
-    .about-card p, .value-card p { color: var(--muted); }
-    .about-card strong { color: var(--brand); }
-    .value-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
-    .value-item { padding: 20px; border: 1px solid var(--line); border-radius: var(--radius-md); background: #fff; }
-    .value-icon { display: grid; place-items: center; width: 42px; height: 42px; margin-bottom: 14px; border-radius: 12px; color: var(--brand); background: var(--brand-soft); font-size: 1.2rem; }
-    .value-item h4 { margin: 0 0 5px; font-size: .98rem; }
-    .value-item p { margin: 0; font-size: .86rem; }
-
-    .article-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-    .article-card { display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-lg); background: #fff; box-shadow: var(--shadow-soft); transition: transform .2s ease, box-shadow .2s ease; }
-    .article-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
-    .article-card > img { width: 100%; height: 190px; object-fit: cover; }
-    .article-bar { height: 8px; background: linear-gradient(90deg, var(--brand), #39a4f3); }
-    .article-content { display: flex; flex: 1; flex-direction: column; padding: 28px; }
-    .article-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 13px; color: #667990; font-size: .76rem; font-weight: 850; letter-spacing: .04em; text-transform: uppercase; }
-    .article-meta span + span::before { content: "•"; margin-right: 10px; color: #9bb0c7; }
-    .article-card h3 { margin-bottom: 12px; color: var(--brand); font-size: 1.35rem; line-height: 1.25; letter-spacing: -.025em; }
-    .article-card p { margin-bottom: 15px; color: var(--muted); font-size: .95rem; }
-    .article-card ul { margin: 0 0 21px; padding-left: 20px; color: var(--muted); font-size: .93rem; }
-    .article-card li + li { margin-top: 7px; }
-    .article-footer { display: flex; align-items: center; justify-content: flex-end; gap: 12px; margin-top: auto; padding-top: 19px; border-top: 1px solid var(--line); color: var(--brand); font-size: .84rem; font-weight: 850; }
-    .article-footer a:hover { text-decoration: underline; }
-
-    .cta-band { padding: 78px 0; background: var(--brand-soft); }
-    .cta-box { display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 37px 40px; border-radius: var(--radius-lg); color: #fff; background: linear-gradient(120deg, var(--brand-strong), #0f72c8); box-shadow: var(--shadow); }
-    .cta-box h2 { margin-bottom: 7px; font-size: clamp(1.6rem, 3vw, 2.35rem); line-height: 1.15; letter-spacing: -.045em; }
-    .cta-box p { margin-bottom: 0; color: #dceeff; }
-    .cta-box .button { flex-shrink: 0; color: var(--brand); background: #fff; box-shadow: none; }
-
-    .site-footer { padding: 58px 0 22px; color: #d9eaff; background: #031d46; }
-    .footer-grid { display: grid; grid-template-columns: 1.25fr 1fr 1fr 1.35fr; gap: 42px; padding-bottom: 34px; }
-    .site-footer h2, .site-footer h3 { margin: 0 0 12px; color: #fff; }
-    .site-footer h2 { font-size: 1.22rem; }
-    .site-footer h3 { font-size: .98rem; }
-    .site-footer p, .site-footer li { color: #b9cce2; font-size: .9rem; }
-    .site-footer ul { margin: 0; padding: 0; list-style: none; }
-    .site-footer li + li { margin-top: 7px; }
-    .site-footer a:hover { color: #fff; text-decoration: underline; }
-    .disclaimer { padding: 21px 0; border-top: 1px solid rgba(255, 255, 255, .15); border-bottom: 1px solid rgba(255, 255, 255, .15); }
-    .disclaimer p { margin: 0; font-size: .8rem; }
-    .copyright { margin: 0; padding-top: 18px; color: #93abc8; text-align: center; font-size: .78rem; }
-
-    @media (max-width: 900px) {
-      .hero-grid, .about-layout { grid-template-columns: 1fr; }
-      .hero-grid { gap: 40px; }
-      .about-layout { max-width: 720px; margin-inline: auto; }
-    }
-    @media (max-width: 720px) {
-      .container { width: min(100% - 28px, 620px); }
-      .nav-bar { min-height: 68px; }
-      .menu-toggle { display: inline-flex; }
-      .nav-links { position: fixed; inset: 68px 14px auto; display: none; flex-direction: column; align-items: stretch; gap: 0; padding: 9px; border: 1px solid var(--line); border-radius: 15px; background: #fff; box-shadow: var(--shadow); }
-      .nav-links.is-open { display: flex; }
-      .nav-links a { padding: 12px 13px; border-radius: 9px; }
-      .nav-links a:hover { background: var(--brand-soft); }
-      .header-action { display: none; }
-      .hero { padding: 66px 0 80px; }
-      h1 { font-size: clamp(2.35rem, 12vw, 3.5rem); }
-      .section { padding: 66px 0; }
-      .value-list, .article-grid, .footer-grid { grid-template-columns: 1fr; }
-      .about-card, .value-card, .article-content { padding: 25px 21px; }
-      .cta-box { align-items: flex-start; flex-direction: column; padding: 29px 23px; }
-      .hero-partner-text { font-size: 15px; letter-spacing: 1px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
-    }
-  </style>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "AUF Trip",
-    "url": "https://jodirinaldi789-jpg.github.io/auf-trip/",
-    "description": "Media rekomendasi perjalanan dan tips hemat liburan untuk traveler Indonesia.",
-    "inLanguage": "id-ID",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Tim AUF Trip"
-    }
-  }
-  </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"AUF Trip","url":"https://jodirinaldi789-jpg.github.io/auf-trip/","inLanguage":"id-ID","publisher":{"@type":"Organization","name":"AUF Trip","founder":"Jodi Rinaldi"}}
+</script>
 </head>
 
 <body>
-  <a class="skip-link" href="#main-content">Lewati ke konten utama</a>
+<a class="skip" href="#main">Lewati ke konten</a>
 
-  <header class="site-header">
-    <div class="container nav-bar">
-      <a class="brand" href="#beranda" aria-label="AUF Trip, kembali ke beranda">
-        <span class="brand-mark" aria-hidden="true">✈</span>
-        <span class="brand-text">AUF Trip</span>
-      </a>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home">
+      <span class="mark">✈</span>
+      <span>AUF Trip</span>
+    </a>
 
-      <nav class="nav-links" id="primary-navigation" aria-label="Navigasi utama">
-        <a href="#beranda">Home</a>
-        <a href="#destinasi">Destinasi</a>
-        <a href="#artikel">Blog Travel</a>
-        <a href="#tentang">Tentang Kami</a>
-        <a href="#kontak">Kontak</a>
-      </nav>
+    <nav class="links" id="nav">
+      <a href="#home">Home</a>
+      <a href="#destinasi">Destinasi</a>
+      <a href="#artikel">Blog Travel</a>
+      <a href="#tentang">Tentang Kami</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
 
-      <a class="header-action" href="#partner" style="background:#ff6b35">Cari Promo</a>
+    <a class="btn orange" href="#partner">Cari Promo</a>
+    <button class="toggle" id="toggle" aria-label="Buka menu" aria-expanded="false">☰</button>
+  </div>
+</header>
 
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Buka menu navigasi">☰</button>
+<main id="main">
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">PARTNER TRAVELER INDONESIA</p>
+      <h1>Wujudkan Liburan Impianmu dengan Budget Terjangkau</h1>
+      <p class="hero-copy">AUF Trip menyajikan inspirasi destinasi, panduan praktis, dan tips travel yang membantu Anda membuat keputusan perjalanan dengan lebih percaya diri.</p>
+      <a class="btn" href="#destinasi" style="background:#fff;color:var(--b )">Mulai Jelajahi</a>
+
+      <div class="trust">
+        <span><b>✓</b> Praktis dibaca</span>
+        <span><b>✓</b> Fokus traveler Indonesia</span>
+        <span><b>✓</b> Tips yang bisa diterapkan</span>
+      </div>
     </div>
-  </header>
 
-  <main id="main-content">
-    <section class="hero" id="beranda" aria-labelledby="hero-title">
-      <div class="container hero-grid">
+    <aside class="search">
+      <h2>Mulai dari sini</h2>
+      <small>Temukan artikel sesuai kebutuhan Anda.</small>
+
+      <form class="form" id="searchForm">
         <div>
-          <p class="hero-partner-text">PARTNER TRAVELER INDONESIA</p>
-
-          <h1 id="hero-title" style="font-size: 1.08rem; font-weight: 400; line-height: 1.65; letter-spacing: normal;">
-            Wujudkan Liburan Impianmu dengan Budget Terjangkau
-          </h1>
-
-          <p class="hero-description">
-            <span class="brand-text">AUF Trip</span> menyajikan inspirasi destinasi, panduan praktis, dan tips travel yang membantu Anda membuat keputusan perjalanan dengan lebih percaya diri.
-          </p>
-
-          <div class="hero-actions">
-            <a class="button button-light" href="#destinasi">Mulai Jelajahi</a>
-          </div>
-
-          <div class="trust-row" aria-label="Keunggulan AUF Trip">
-            <span><b>✓</b> Praktis dibaca</span>
-            <span><b>✓</b> Fokus traveler Indonesia</span>
-            <span><b>✓</b> Tips yang bisa diterapkan</span>
-          </div>
+          <label class="label" for="keyword">Destinasi atau kata kunci</label>
+          <input class="input" id="keyword" placeholder="Contoh: Bali atau hotel murah">
         </div>
 
-        <aside class="planner" aria-labelledby="planner-title">
-          <div class="planner-heading">
-            <div>
-              <h2 id="planner-title">Mulai dari sini</h2>
-              <p>Temukan topik yang sesuai kebutuhan Anda.</p>
-            </div>
-            <span class="planner-badge">Panduan gratis</span>
-          </div>
-
-          <form class="planner-form" id="planner-form">
-            <div>
-              <label class="field-label" for="destination">Destinasi atau topik</label>
-              <input class="field-input" id="destination" name="destination" type="search" placeholder="Contoh: Bali atau hotel murah" autocomplete="off">
-            </div>
-            <div>
-              <label class="field-label" for="travel-type">Yang ingin dicari</label>
-              <select class="field-select" id="travel-type" name="travel-type">
-                <option value="artikel">Tips travel</option>
-                <option value="hotel">Hotel dan staycation</option>
-                <option value="destinasi">Inspirasi destinasi</option>
-              </select>
-            </div>
-            <button class="planner-submit" type="submit">Cari di artikel</button>
-            <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
-          </form>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section section-soft" id="partner" aria-labelledby="partner-title">
-      <div class="container">
-        <header class="section-header">
-          <p class="section-kicker">Partner Booking</p>
-          <h2 id="partner-title">Partner Booking Terpercaya</h2>
-          <p>Bandingkan pilihan perjalanan melalui platform yang sudah dikenal traveler Indonesia.</p>
-        </header>
-
-        <div class="value-list">
-          <article class="value-item">
-            <div class="value-icon" aria-hidden="true">T</div>
-            <h4>Traveloka</h4>
-            <p>Pilihan hotel, tiket, dan aktivitas perjalanan.</p>
-            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
-              <a class="button" style="padding:8px 10px;font-size:.78rem" href="#kontak">Cari Hotel</a>
-              <a class="button" style="padding:8px 10px;font-size:.78rem;background:#ff6b35" href="#kontak">Cari Tiket</a>
-            </div>
-          </article>
-          <article class="value-item">
-            <div class="value-icon" aria-hidden="true">T</div>
-            <h4>Trip.com</h4>
-            <p>Inspirasi penerbangan dan akomodasi internasional.</p>
-            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
-              <a class="button" style="padding:8px 10px;font-size:.78rem" href="#kontak">Cari Hotel</a>
-              <a class="button" style="padding:8px 10px;font-size:.78rem;background:#ff6b35" href="#kontak">Cari Tiket</a>
-            </div>
-          </article>
-          <article class="value-item">
-            <div class="value-icon" aria-hidden="true">A</div>
-            <h4>Agoda</h4>
-            <p>Rekomendasi hotel dan staycation untuk berbagai bujet.</p>
-            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
-              <a class="button" style="padding:8px 10px;font-size:.78rem" href="#kontak">Cari Hotel</a>
-              <a class="button" style="padding:8px 10px;font-size:.78rem;background:#ff6b35" href="#kontak">Cari Tiket</a>
-            </div>
-          </article>
-          <article class="value-item">
-            <div class="value-icon" aria-hidden="true">K</div>
-            <h4>Klook</h4>
-            <p>Tiket atraksi dan aktivitas seru di destinasi pilihan.</p>
-            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
-              <a class="button" style="padding:8px 10px;font-size:.78rem" href="#kontak">Cari Hotel</a>
-              <a class="button" style="padding:8px 10px;font-size:.78rem;background:#ff6b35" href="#kontak">Cari Tiket</a>
-            </div>
-          </article>
-        </div>
-        <p style="margin:24px 0 0;color:var(--muted);text-align:center;font-size:.86rem">Kami adalah affiliate partner resmi dari platform di atas.</p>
-      </div>
-    </section>
-
-    <section class="section" id="destinasi" aria-labelledby="destination-title">
-      <div class="container">
-        <header class="section-header">
-          <p class="section-kicker">Destinasi Populer</p>
-          <h2 id="destination-title">Destinasi Favorit Traveler Indonesia</h2>
-          <p>Mulai dari kota metropolitan sampai tujuan budaya yang kaya pengalaman.</p>
-        </header>
-
-        <div class="article-grid">
-          <article class="article-card">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1555899434-94d1368aa7af?auto=format&fit=crop&w=900&q=80" alt="Pemandangan kota Jakarta pada sore hari">
-            <div class="article-bar" aria-hidden="true"></div>
-            <div class="article-content">
-              <div class="article-meta"><span>Urban escape</span><span>Jakarta · ★★★★★ 4.9</span></div>
-              <h3>Jakarta: staycation, kuliner, dan city walk</h3>
-              <p>Pilih area dengan akses transportasi mudah untuk menikmati hotel, pusat kuliner, dan ruang kreatif dalam satu perjalanan.</p>
-              <div class="article-footer"><a href="#artikel">Lihat tips →</a></div>
-            </div>
-          </article>
-          <article class="article-card">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=80" alt="Pura dan lanskap tropis Bali">
-            <div class="article-bar" aria-hidden="true"></div>
-            <div class="article-content">
-              <div class="article-meta"><span>Pantai &amp; budaya</span><span>Bali · ★★★★★ 4.9</span></div>
-              <h3>Bali: pantai, budaya, dan pengalaman lokal</h3>
-              <p>Rencanakan perjalanan seimbang dengan memilih waktu kunjungan, area menginap, dan aktivitas sesuai bujet.</p>
-              <div class="article-footer"><a href="#artikel">Lihat tips →</a></div>
-            </div>
-          </article>
-          <article class="article-card">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?auto=format&fit=crop&w=900&q=80" alt="Candi dan suasana budaya Yogyakarta">
-            <div class="article-bar" aria-hidden="true"></div>
-            <div class="article-content">
-              <div class="article-meta"><span>Heritage trip</span><span>Yogyakarta · ★★★★★ 4.9</span></div>
-              <h3>Yogyakarta: budaya, kuliner, dan sejarah</h3>
-              <p>Nikmati perjalanan bernilai dengan itinerary sederhana yang menggabungkan wisata budaya, kuliner, dan waktu istirahat.</p>
-              <div class="article-footer"><a href="#artikel">Lihat tips →</a></div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="tentang" aria-labelledby="about-title">
-      <div class="container">
-        <header class="section-header">
-          <p class="section-kicker">Tentang <span class="brand-text">AUF Trip</span></p>
-          <h2 id="about-title">Teman tepercaya untuk rencana liburan Anda</h2>
-          <p>Kami menyederhanakan informasi perjalanan agar lebih mudah dipahami dan digunakan.</p>
-        </header>
-        <div class="about-layout">
-          <article class="about-card">
-            <h3>Siapa kami?</h3>
-            <p><strong><span class="brand-text">AUF Trip</span></strong> adalah media rekomendasi perjalanan dan tips hemat liburan untuk traveler Indonesia. Kami membahas inspirasi destinasi, hotel, staycation, dan panduan perjalanan secara praktis.</p>
-            <p>Tujuan kami adalah membantu Anda merencanakan perjalanan yang lebih hemat, nyaman, dan berkesan melalui informasi yang jelas dan relevan.</p>
-            <p>Kami menjaga transparansi dalam setiap rekomendasi dan akan memperbarui informasi ketika harga, promo, atau kebijakan partner berubah.</p>
-          </article>
-          <div class="value-card">
-            <h3>Yang Anda dapatkan</h3>
-            <div class="value-list">
-              <article class="value-item"><div class="value-icon" aria-hidden="true">✦</div><h4>Inspirasi</h4><p>Ide destinasi dan aktivitas untuk perjalanan berikutnya.</p></article>
-              <article class="value-item"><div class="value-icon" aria-hidden="true">✓</div><h4>Tips hemat</h4><p>Strategi sederhana untuk membantu mengatur bujet.</p></article>
-              <article class="value-item"><div class="value-icon" aria-hidden="true">⌕</div><h4>Panduan praktis</h4><p>Informasi ringkas yang mudah diterapkan traveler.</p></article>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-soft" id="artikel" aria-labelledby="article-title">
-      <div class="container">
-        <header class="section-header">
-          <p class="section-kicker">Tips &amp; Panduan Traveling Hemat</p>
-          <h2 id="article-title">Tips &amp; Panduan Traveling Hemat</h2>
-          <p>Mulai dari strategi memesan hotel sampai ide staycation hemat di Jakarta.</p>
-        </header>
-        <div class="article-grid">
-          <article class="article-card" data-topic="hotel" data-search="hotel booking murah agoda pemula harga promo kupon fasilitas ulasan pembatalan">
-            <div class="article-bar" aria-hidden="true"></div>
-            <div class="article-content">
-              <div class="article-meta"><span>Tips hotel</span><span>3 Oktober 2026</span></div>
-              <h3>5 Cara Booking Hotel Murah di Jakarta Pusat untuk Traveler Pemula</h3>
-              <p>Harga murah tetap bisa memberikan pengalaman nyaman jika Anda membandingkan pilihan dengan teliti dan memanfaatkan fitur yang tersedia. Jakarta Pusat memiliki banyak pilihan hotel untuk berbagai kebutuhan dan bujet. Dengan merencanakan tanggal, lokasi, serta fasilitas sejak awal, traveler pemula dapat menghemat biaya tanpa mengorbankan kenyamanan.</p>
-              <ul><li>Bandingkan harga, lokasi, fasilitas, dan ulasan tamu.</li><li>Periksa promo, kupon, serta kebijakan pembatalan.</li><li>Pesan pada waktu yang sesuai dengan rencana perjalanan.</li></ul>
-              <div class="article-footer"></div>
-            </div>
-          </article>
-          <article class="article-card" data-topic="staycation" data-search="staycation jakarta hemat akhir pekan hotel transportasi sarapan fasilitas weekday weekend">
-            <div class="article-bar" aria-hidden="true"></div>
-            <div class="article-content">
-              <div class="article-meta"><span>Staycation</span><span>4 menit baca</span></div>
-              <h3>Rekomendasi Staycation Hemat di Jakarta</h3>
-              <p>Staycation tidak harus mahal. Dengan lokasi dan fasilitas yang tepat, akhir pekan di Jakarta tetap bisa terasa nyaman.</p>
-              <ul><li>Pilih area dengan akses transportasi umum yang mudah.</li><li>Cari paket yang sudah termasuk sarapan atau fasilitas rekreasi.</li><li>Bandingkan harga weekday dan weekend sebelum memesan.</li></ul>
-              <div class="article-footer"></div>
-            </div>
-          </article>
-          <article class="article-card" data-topic="destinasi" data-search="tiket pesawat promo bali pesawat bali penerbangan harga murah fleksibel tanggal">
-            <div class="article-bar" aria-hidden="true"></div>
-            <div class="article-content">
-              <div class="article-meta"><span>Tiket pesawat</span><span>6 menit baca</span></div>
-              <h3>Cara Mendapatkan Tiket Pesawat Promo ke Bali</h3>
-              <p>Harga tiket berubah-ubah. Fleksibilitas tanggal dan kebiasaan membandingkan pilihan dapat membantu Anda menemukan jadwal yang lebih sesuai bujet.</p>
-              <ul><li>Bandingkan beberapa tanggal keberangkatan.</li><li>Periksa bagasi, transit, dan aturan perubahan jadwal.</li><li>Pesan dari platform resmi dan baca detail sebelum membayar.</li></ul>
-              <div class="article-footer"></div>
-            </div>
-          </article>
-          <article class="article-card" data-topic="destinasi" data-search="yogyakarta budget 2 juta liburan jogja itinerary budaya kuliner hemat">
-            <div class="article-bar" aria-hidden="true"></div>
-            <div class="article-content">
-              <div class="article-meta"><span>Panduan destinasi</span><span>7 menit baca</span></div>
-              <h3>Panduan Lengkap Liburan ke Yogyakarta dengan Budget 2 Juta</h3>
-              <p>Dengan itinerary yang realistis, pilihan penginapan tepat, dan transportasi efisien, Yogyakarta dapat dinikmati tanpa mengorbankan pengalaman.</p>
-              <ul><li>Susun prioritas tempat dan kelompokkan berdasarkan area.</li><li>Alokasikan bujet untuk transportasi, makan, dan tiket masuk.</li><li>Sisakan dana cadangan untuk perubahan rencana.</li></ul>
-              <div class="article-footer"></div>
-            </div>
-          </article>
-        </div>
-        <p class="results-message" id="results-message" role="status" aria-live="polite"></p>
-      </div>
-    </section>
-
-    <section class="section section-soft" id="kontak-form" aria-labelledby="contact-title">
-      <div class="container">
-        <header class="section-header">
-          <h2 id="contact-title">Ada pertanyaan tentang perjalanan?</h2>
-          <p>Hubungi tim <span class="brand-text">AUF Trip</span> melalui email, WhatsApp, atau formulir berikut.</p>
-        </header>
-
-        <div class="about-layout">
-          <article class="about-card">
-            <h3>Informasi kontak</h3>
-            <p>Email: <a href="mailto:jodirinaldi189@gmail.com">jodirinaldi189@gmail.com</a></p>
-            <p>WhatsApp: <a href="tel:+6283808088910">+62 838-0808-8910</a></p>
-            <p>Tim kami berusaha menjawab pertanyaan dan masukan yang masuk dengan sebaik-baiknya.</p>
-          </article>
-
-          <form class="value-card" id="contact-form">
-            <h3>Kirim pesan</h3>
-            <label class="field-label" style="color:var(--ink)" for="contact-name">Nama</label>
-            <input class="field-input" id="contact-name" name="name" type="text" required placeholder="Nama Anda">
-            <label class="field-label" style="color:var(--ink);margin-top:12px" for="contact-email">Email</label>
-            <input class="field-input" id="contact-email" name="email" type="email" required placeholder="nama@email.com">
-            <label class="field-label" style="color:var(--ink);margin-top:12px" for="contact-message">Pesan</label>
-            <textarea class="field-input" id="contact-message" name="message" required rows="4" placeholder="Tulis pertanyaan atau masukan Anda" style="resize:vertical"></textarea>
-            <button class="button" type="submit" style="margin-top:14px">Kirim pesan</button>
-            <p class="results-message" id="contact-status" role="status" aria-live="polite"></p>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta-band" aria-label="Ajakan membaca artikel">
-      <div class="container">
-        <div class="cta-box">
-          <div>
-            <h2>Liburan lebih siap dimulai dari informasi yang tepat.</h2>
-            <p>Temukan ide dan tips yang sesuai dengan gaya perjalanan Anda.</p>
-          </div>
-          <a class="button" href="#artikel">Lihat semua tips</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer" id="kontak">
-    <div class="container">
-      <div class="footer-grid">
         <div>
-          <h2><span class="brand-text">AUF Trip</span></h2>
-          <p>Media rekomendasi perjalanan dan tips hemat liburan untuk traveler Indonesia.</p>
+          <label class="label" for="category">Kategori</label>
+          <select class="input" id="category">
+            <option value="all">Semua kategori</option>
+            <option value="hotel">Hotel</option>
+            <option value="staycation">Staycation</option>
+            <option value="destinasi">Destinasi</option>
+          </select>
         </div>
-        <div>
-          <h3>Jelajahi</h3>
+
+        <button class="btn" type="submit">Cari artikel</button>
+        <p class="message" id="searchMessage" role="status"></p>
+      </form>
+    </aside>
+  </div>
+</section>
+
+<section class="section soft" id="partner">
+  <div class="wrap">
+    <div class="heading">
+      <p class="kicker">Partner Affiliate</p>
+      <h2>Partner Booking Terpercaya</h2>
+      <p>Temukan pilihan perjalanan melalui platform yang dikenal traveler Indonesia.</p>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <div class="icon">T</div>
+        <h3>Traveloka</h3>
+        <p>Hotel, tiket, dan aktivitas perjalanan.</p>
+        <div class="card-actions">
+          <a class="btn" href="#kontak">Cari Hotel</a>
+          <a class="btn orange" href="#kontak">Cari Tiket</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icon">T</div>
+        <h3>Trip.com</h3>
+        <p>Penerbangan dan akomodasi global.</p>
+        <div class="card-actions">
+          <a class="btn" href="#kontak">Cari Hotel</a>
+          <a class="btn orange" href="#kontak">Cari Tiket</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icon">A</div>
+        <h3>Agoda</h3>
+        <p>Hotel dan rekomendasi staycation.</p>
+        <div class="card-actions">
+          <a class="btn" href="#kontak">Cari Hotel</a>
+          <a class="btn orange" href="#kontak">Cari Tiket</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icon">K</div>
+        <h3>Klook</h3>
+        <p>Tiket atraksi dan aktivitas seru.</p>
+        <div class="card-actions">
+          <a class="btn" href="#kontak">Cari Hotel</a>
+          <a class="btn orange" href="#kontak">Cari Tiket</a>
+        </div>
+      </article>
+    </div>
+
+    <p class="affiliate-note">Kami adalah affiliate partner resmi dari platform di atas.</p>
+  </div>
+</section>
+
+<section class="section" id="destinasi">
+  <div class="wrap">
+    <div class="heading">
+      <p class="kicker">Destinasi Populer</p>
+      <h2>Destinasi Favorit Traveler Indonesia</h2>
+      <p>Inspirasi perjalanan untuk kota, pantai, dan wisata budaya.</p>
+    </div>
+
+    <div class="dest-grid">
+      <article class="card image-card">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1555899434-94d1368aa7af?w=800" alt="Pemandangan Jakarta">
+        <div class="inside">
+          <div class="meta">Urban escape · Jakarta · ★★★★★ 4.9</div>
+          <h3>Jakarta: Staycation &amp; Kuliner</h3>
+          <p>Nikmati hotel, pusat kuliner, dan ruang kreatif dalam satu perjalanan.</p>
+          <a class="read" href="#artikel">Lihat tips →</a>
+        </div>
+      </article>
+
+      <article class="card image-card">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800" alt="Pura di Bali">
+        <div class="inside">
+          <div class="meta">Pantai &amp; budaya · Bali · ★★★★★ 4.9</div>
+          <h3>Bali: Pantai &amp; Budaya</h3>
+          <p>Rencanakan perjalanan seimbang dengan aktivitas sesuai bujet.</p>
+          <a class="read" href="#artikel">Lihat tips →</a>
+        </div>
+      </article>
+
+      <article class="card image-card">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=800" alt="Candi di Yogyakarta">
+        <div class="inside">
+          <div class="meta">Heritage trip · Yogyakarta · ★★★★★ 4.9</div>
+          <h3>Yogyakarta: Budaya &amp; Sejarah</h3>
+          <p>Itinerary sederhana menggabungkan wisata budaya dan kuliner.</p>
+          <a class="read" href="#artikel">Lihat tips →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section soft" id="tentang">
+  <div class="wrap about">
+    <div>
+      <p class="kicker">Tentang AUF Trip</p>
+      <h2>Teman tepercaya untuk rencana liburan Anda</h2>
+      <p><b>AUF Trip</b> adalah media rekomendasi perjalanan dan tips hemat liburan untuk traveler Indonesia. Kami membahas inspirasi destinasi, hotel, staycation, dan panduan perjalanan secara praktis.</p>
+      <p>Tujuan kami adalah membantu Anda merencanakan perjalanan yang lebih hemat, nyaman, dan berkesan melalui informasi yang jelas dan relevan.</p>
+      <p>Kami menjaga transparansi dalam setiap rekomendasi dan menyajikan informasi yang mudah dipahami.</p>
+    </div>
+
+    <div>
+      <h2>Yang Anda dapatkan</h2>
+      <div class="values">
+        <article class="card">
+          <div class="icon">✦</div>
+          <h3>Inspirasi</h3>
+          <p>Ide destinasi untuk perjalanan berikutnya.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">✓</div>
+          <h3>Tips hemat</h3>
+          <p>Strategi sederhana mengatur bujet.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">⌕</div>
+          <h3>Panduan praktis</h3>
+          <p>Informasi ringkas yang mudah diterapkan.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="artikel">
+  <div class="wrap">
+    <div class="heading">
+      <p class="kicker">Tips &amp; Panduan</p>
+      <h2>Tips &amp; Panduan Traveling Hemat</h2>
+      <p>Artikel praktis untuk membantu perjalanan Anda lebih siap.</p>
+    </div>
+
+    <div class="article-grid" id="articles">
+      <article class="card article-card" data-cat="hotel" data-search="hotel booking murah jakarta">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800" alt="Kamar hotel">
+        <div class="inside">
+          <div class="meta">Tips hotel · 3 Oktober 2026</div>
+          <h3>5 Cara Booking Hotel Murah di Jakarta Pusat untuk Traveler Pemula</h3>
+          <p>Harga murah tetap nyaman jika Anda membandingkan pilihan dengan teliti.</p>
           <ul>
-            <li><a href="#beranda">Home</a></li>
-            <li><a href="#destinasi">Destinasi</a></li>
-            <li><a href="#artikel">Blog Travel</a></li>
-            <li><a href="#tentang">Tentang Kami</a></li>
+            <li>Bandingkan harga dan lokasi.</li>
+            <li>Periksa promo dan pembatalan.</li>
+            <li>Pesan sesuai rencana perjalanan.</li>
           </ul>
         </div>
-        <div>
-          <h3>Legal</h3>
+      </article>
+
+      <article class="card article-card" data-cat="staycation" data-search="staycation hotel jakarta hemat">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800" alt="Kolam hotel untuk staycation">
+        <div class="inside">
+          <div class="meta">Staycation · 4 menit baca</div>
+          <h3>Rekomendasi Staycation Hemat di Jakarta</h3>
+          <p>Akhir pekan di Jakarta tetap nyaman dengan lokasi dan fasilitas yang tepat.</p>
           <ul>
-            <li><a href="#disclaimer">Affiliate Disclosure</a></li>
-            <li><a href="#privacy">Kebijakan Privasi</a></li>
-            <li><a href="#kontak-form">Kontak Kami</a></li>
+            <li>Pilih akses transportasi mudah.</li>
+            <li>Cari paket termasuk sarapan.</li>
+            <li>Bandingkan harga weekday.</li>
           </ul>
         </div>
-        <div>
-          <h3>Kontak</h3>
-          <p><a href="mailto:jodirinaldi189@gmail.com">jodirinaldi189@gmail.com</a></p>
-          <p><a href="tel:+6283808088910">WhatsApp: +62 838-0808-8910</a></p>
-          <p>Silakan hubungi kami untuk pertanyaan dan masukan.</p>
+      </article>
+
+      <article class="card article-card" data-cat="destinasi" data-search="tiket pesawat promo bali">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800" alt="Pesawat di langit">
+        <div class="inside">
+          <div class="meta">Tiket pesawat · 6 menit baca</div>
+          <h3>Cara Mendapatkan Tiket Pesawat Promo ke Bali</h3>
+          <p>Fleksibilitas tanggal membantu menemukan jadwal sesuai bujet.</p>
+          <ul>
+            <li>Bandingkan tanggal berangkat.</li>
+            <li>Periksa aturan bagasi.</li>
+            <li>Pesan dari platform resmi.</li>
+          </ul>
         </div>
-      </div>
+      </article>
 
-      <div class="disclaimer" id="disclaimer">
-        <p>📢 Affiliate Disclosure: <span class="brand-text">AUF Trip</span> adalah peserta dalam berbagai program afiliasi termasuk Involve Asia. Kami menerima komisi ketika Anda melakukan pemesanan melalui link affiliate di website ini, tanpa biaya tambahan bagi Anda. Kami hanya merekomendasikan layanan yang kami percayai.</p>
-      </div>
+      <article class="card article-card" data-cat="destinasi" data-search="yogyakarta budget liburan jogja">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1584810359583-96fc3448beaa?w=800" alt="Candi di Yogyakarta">
+        <div class="inside">
+          <div class="meta">Panduan destinasi · 7 menit baca</div>
+          <h3>Panduan Lengkap Liburan ke Yogyakarta dengan Budget 2 Juta</h3>
+          <p>Yogyakarta dapat dinikmati tanpa mengorbankan pengalaman.</p>
+          <ul>
+            <li>Kelompokkan tempat berdasarkan area.</li>
+            <li>Alokasikan bujet transportasi.</li>
+            <li>Sisakan dana cadangan.</li>
+          </ul>
+        </div>
+      </article>
 
-      <div class="disclaimer" id="privacy">
-        <p><strong>Kebijakan Privasi:</strong> <span class="brand-text">AUF Trip</span> menghormati privasi pengunjung. Data yang dikirim melalui email atau formulir digunakan untuk menjawab pertanyaan dan tidak dijual kepada pihak lain.</p>
-      </div>
-
-      <p class="copyright">© 2026 <span class="brand-text">AUF Trip</span>. All Rights Reserved.</p>
+      <p class="empty" id="empty" hidden>Artikel tidak ditemukan. Coba kata kunci lain.</p>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script>
-    (function () {
-      const toggle = document.querySelector('.menu-toggle');
-      const nav = document.querySelector('#primary-navigation');
-      const form = document.querySelector('#planner-form');
-      const destination = document.querySelector('#destination');
-      const message = document.querySelector('#form-message');
-      const type = document.querySelector('#travel-type');
-      const resultMessage = document.querySelector('#results-message');
-      const cards = Array.from(document.querySelectorAll('.article-card'));
+<section class="section soft" id="kontak">
+  <div class="wrap contact">
+    <div>
+      <h2>Ada pertanyaan tentang perjalanan?</h2>
+      <p>Hubungi tim AUF Trip melalui email atau WhatsApp.</p>
+      <p><b>Email:</b>  
+<a href="mailto:jodirinaldi189@gmail.com" style="color:var(--b )">jodirinaldi189@gmail.com</a></p>
+      <p><b>WhatsApp:</b>  
+<a href="tel:+6283808088910" style="color:var(--b)">+62 838-0808-8910</a></p>
+      <p>Lokasi: Jakarta, Indonesia</p>
+    </div>
 
-      if (toggle && nav) {
-        toggle.addEventListener('click', function () {
-          const open = toggle.getAttribute('aria-expanded') === 'true';
-          toggle.setAttribute('aria-expanded', String(!open));
-          toggle.setAttribute('aria-label', open ? 'Buka menu navigasi' : 'Tutup menu navigasi');
-          nav.classList.toggle('is-open', !open);
-          document.body.classList.toggle('menu-open', !open);
-        });
+    <form class="card" id="contactForm">
+      <h3>Kirim pesan</h3>
+      <label class="label" style="color:var(--t)" for="name">Nama</label>
+      <input class="input" id="name" required placeholder="Nama Anda">
 
-        nav.querySelectorAll('a').forEach(function (link) {
-          link.addEventListener('click', function () {
-            toggle.setAttribute('aria-expanded', 'false');
-            toggle.setAttribute('aria-label', 'Buka menu navigasi');
-            nav.classList.remove('is-open');
-            document.body.classList.remove('menu-open');
-          });
-        });
+      <label class="label" style="color:var(--t)" for="email">Email</label>
+      <input class="input" id="email" type="email" required placeholder="nama@email.com">
 
-        document.addEventListener('keydown', function (event) {
-          if (event.key === 'Escape' && nav.classList.contains('is-open')) {
-            toggle.click();
-            toggle.focus();
-          }
-        });
+      <label class="label" style="color:var(--t)" for="note">Pesan</label>
+      <textarea class="input" id="note" rows="4" required placeholder="Tulis pesan Anda"></textarea>
 
-        document.addEventListener('click', function (event) {
-          if (nav.classList.contains('is-open') && !nav.contains(event.target) && !toggle.contains(event.target)) {
-            toggle.click();
-          }
-        });
-      }
+      <button class="btn" type="submit">Kirim pesan</button>
+    </form>
+  </div>
+</section>
 
-      const contactForm = document.querySelector('#contact-form');
-      const contactStatus = document.querySelector('#contact-status');
+<section class="cta">
+  <div class="wrap cta-box">
+    <div>
+      <h2>Liburan lebih siap dimulai dari informasi yang tepat.</h2>
+      <p>Temukan ide dan tips yang sesuai dengan gaya perjalanan Anda.</p>
+    </div>
+    <a class="btn" href="#artikel">Lihat semua tips</a>
+  </div>
+</section>
+</main>
 
-      if (contactForm && contactStatus) {
-        contactForm.addEventListener('submit', function (event) {
-          event.preventDefault();
-          alert('Pesan Anda telah terkirim!');
-          contactStatus.textContent = 'Pesan terkirim! Terima kasih, tim AUF Trip akan menindaklanjuti melalui email.';
-          contactForm.reset();
-        });
-      }
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h2>AUF Trip</h2>
+        <p>Media rekomendasi perjalanan dan tips hemat liburan untuk traveler Indonesia.</p>
+      </div>
 
-      if (form && destination && type && message && resultMessage && cards.length) {
-        form.addEventListener('submit', function (event) {
-          event.preventDefault();
-          const value = destination.value.trim();
-          const selectedType = type.value;
-          const query = (value + ' ' + selectedType).toLowerCase().trim();
-          let visible = 0;
+      <div>
+        <h3>Jelajahi</h3>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#destinasi">Destinasi</a></li>
+          <li><a href="#artikel">Blog Travel</a></li>
+          <li><a href="#tentang">Tentang Kami</a></li>
+        </ul>
+      </div>
 
-          cards.forEach(function (card) {
-            const matches = !value || card.dataset.search.includes(query) || card.dataset.topic === selectedType;
-            card.classList.toggle('is-hidden', !matches);
-            if (matches) visible += 1;
-          });
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="#disclosure">Affiliate Disclosure</a></li>
+          <li><a href="#privacy">Kebijakan Privasi</a></li>
+          <li><a href="#kontak">Kontak Kami</a></li>
+        </ul>
+      </div>
 
-          message.textContent = value ? 'Menampilkan artikel yang paling relevan untuk "' + value + '".' : 'Menampilkan artikel berdasarkan kategori pilihan Anda.';
-          resultMessage.textContent = visible + ' artikel tersedia. Jika membutuhkan bantuan, silakan hubungi kami melalui email.';
+      <div>
+        <h3>Kontak</h3>
+        <p>
+          <a href="mailto:jodirinaldi189@gmail.com">jodirinaldi189@gmail.com</a>  
 
-          const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-          document.querySelector('#artikel').scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
-        });
-      }
-    }());
-  </script>
+          <a href="tel:+6283808088910">+62 838-0808-8910</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="disclosure" id="disclosure">
+      <p>
+        📢 <b>Affiliate Disclosure:</b> AUF Trip adalah peserta dalam berbagai program afiliasi termasuk Involve Asia. Kami menerima komisi ketika Anda melakukan pemesanan melalui link affiliate di website ini, tanpa biaya tambahan bagi Anda. Kami hanya merekomendasikan layanan yang kami percayai.
+      </p>
+    </div>
+
+    <div class="disclosure" id="privacy">
+      <p>
+        <b>Kebijakan Privasi:</b> AUF Trip menghormati privasi pengunjung. Data yang dikirim melalui email atau formulir digunakan untuk menjawab pertanyaan dan tidak dijual kepada pihak lain.
+      </p>
+    </div>
+
+    <p class="copyright">© 2026 AUF Trip. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+(()=>{
+  const q=s=>document.querySelector(s);
+  const nav=q('#nav');
+  const toggle=q('#toggle');
+
+  toggle.onclick=()=>{
+    const open=nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded',open);
+  };
+
+  nav.querySelectorAll('a').forEach(a=>a.onclick=()=>{
+    nav.classList.remove('open');
+    toggle.setAttribute('aria-expanded','false');
+  });
+
+  document.onclick=e=>{
+    if(nav.classList.contains('open')&&!nav.contains(e.target)&&e.target!==toggle){
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+    }
+  };
+
+  document.onkeydown=e=>{
+    if(e.key==='Escape'){
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+    }
+  };
+
+  q('#contactForm').onsubmit=e=>{
+    e.preventDefault();
+    alert('Pesan Anda telah terkirim!');
+    e.target.reset();
+  };
+
+  q('#searchForm').onsubmit=e=>{
+    e.preventDefault();
+
+    const key=q('#keyword').value.toLowerCase().trim();
+    const cat=q('#category').value;
+    const items=[...document.querySelectorAll('.article-card')];
+    let count=0;
+
+    items.forEach(x=>{
+      const show=
+        (cat==='all'||x.dataset.cat===cat)&&
+        (!key||x.dataset.search.includes(key));
+
+      x.hidden=!show;
+      if(show)count++;
+    });
+
+    q('#empty').hidden=count>0;
+    q('#searchMessage').textContent=count+' artikel ditemukan.';
+
+    q('#artikel').scrollIntoView({behavior:'smooth'});
+  };
+})();
+</script>
 </body>
 </html>
