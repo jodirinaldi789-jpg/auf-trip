@@ -20,7 +20,7 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Inter', sans-serif; color: var(--text); line-height: 1.6; background: #fff; }
         a { text-decoration: none; color: inherit; }
-        img { max-width: 100%; height: auto; display: block; }
+        img { max-width: 100%; height: auto; display: block; background: #e0e7ef; }
         .container { max-width: 1160px; margin: 0 auto; padding: 0 20px; }
         
         h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; color: var(--primary); }
@@ -38,6 +38,7 @@
         .btn-orange { background: var(--orange); }
         .btn-orange:hover { background: #e55a2b; }
         
+        /* PERBAIKAN TOMBOL HAMBURGER */
         .menu-toggle { 
             display: none; 
             background: white; 
@@ -55,14 +56,7 @@
             color: white;
         }
 
-        .hero { 
-            background: linear-gradient(90deg, rgba(5,43,105,0.95), rgba(7,59,143,0.8)), 
-                        url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1200') center/cover no-repeat; 
-            color: white; 
-            padding: 100px 0; 
-            text-align: left; 
-            min-height: 500px;
-        }
+        .hero { background: linear-gradient(90deg, rgba(5,43,105,0.95), rgba(7,59,143,0.8)), url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat; color: white; padding: 100px 0; text-align: left; }
         .hero-partner { font-size: 18px; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 20px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: white; }
         .hero h1 { color: white; font-size: 1.08rem; font-weight: 400; margin-bottom: 20px; font-family: 'Inter', sans-serif; }
         .hero p { font-size: 1.05rem; margin-bottom: 30px; color: #e1efff; max-width: 600px; }
@@ -82,43 +76,12 @@
 
         .card { background: white; border: 1px solid var(--border); border-radius: 20px; padding: 25px; transition: transform 0.3s, box-shadow 0.3s; }
         .card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        
-        .platform-logo {
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 15px;
-            font-weight: 900;
-            font-size: 1.5rem;
-            font-family: 'Poppins', sans-serif;
-        }
-        .logo-traveloka { background: linear-gradient(135deg, #00a0dc, #00d4aa); color: white; }
-        .logo-trip { background: linear-gradient(135deg, #0066cc, #00a8e8); color: white; }
-        .logo-agoda { background: linear-gradient(135deg, #5e3fd3, #9b59b6); color: white; }
-        .logo-tiket { background: linear-gradient(135deg, #ff6b35, #ff8c42); color: white; }
-        
+        .card-icon { width: 45px; height: 45px; background: var(--light); color: var(--primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.2rem; margin-bottom: 15px; }
         .card h4 { margin-bottom: 10px; font-size: 1.1rem; }
         .card p { color: var(--muted); font-size: 0.9rem; margin-bottom: 15px; }
         
         .article-card { overflow: hidden; border: 1px solid var(--border); border-radius: 20px; background: white; }
-        .article-card .img-wrapper { 
-            width: 100%; 
-            height: 200px; 
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        .article-card img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
+        .article-card img { width: 100%; height: 200px; object-fit: cover; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
         .article-content { padding: 25px; }
         .article-meta { font-size: 0.75rem; font-weight: 700; color: var(--muted); text-transform: uppercase; margin-bottom: 10px; }
         .article-card h3 { font-size: 1.2rem; margin-bottom: 15px; line-height: 1.4; }
@@ -193,26 +156,10 @@
                 <h2>Partner Booking Terpercaya</h2>
             </div>
             <div class="grid-4">
-                <div class="card">
-                    <div class="platform-logo logo-traveloka">T</div>
-                    <h4>Traveloka</h4>
-                    <p>Hotel, tiket, dan aktivitas.</p>
-                </div>
-                <div class="card">
-                    <div class="platform-logo logo-trip">T</div>
-                    <h4>Trip.com</h4>
-                    <p>Penerbangan & akomodasi global.</p>
-                </div>
-                <div class="card">
-                    <div class="platform-logo logo-agoda">A</div>
-                    <h4>Agoda</h4>
-                    <p>Rekomendasi hotel & staycation.</p>
-                </div>
-                <div class="card">
-                    <div class="platform-logo logo-tiket">T</div>
-                    <h4>Tiket.com</h4>
-                    <p>Tiket atraksi & aktivitas seru.</p>
-                </div>
+                <div class="card"><div class="card-icon">T</div><h4>Traveloka</h4><p>Hotel, tiket, dan aktivitas.</p></div>
+                <div class="card"><div class="card-icon">T</div><h4>Trip.com</h4><p>Penerbangan & akomodasi global.</p></div>
+                <div class="card"><div class="card-icon">A</div><h4>Agoda</h4><p>Rekomendasi hotel & staycation.</p></div>
+                <div class="card"><div class="card-icon">K</div><h4>Klook</h4><p>Tiket atraksi & aktivitas seru.</p></div>
             </div>
             <p style="text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 30px;">Kami adalah affiliate partner resmi dari platform di atas.</p>
         </div>
@@ -225,11 +172,8 @@
                 <h2>Destinasi Favorit Traveler Indonesia</h2>
             </div>
             <div class="grid-3">
-                <!-- JAKARTA - Cityscape -->
                 <div class="article-card">
-                    <div class="img-wrapper">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1555899434-94d1368aa7af?w=600&h=400&fit=crop" alt="Jakarta" onerror="this.style.display='none'">
-                    </div>
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1555899434-94d1368aa7af?auto=format&fit=crop&w=600&q=80" alt="Jakarta">
                     <div class="article-content">
                         <div class="article-meta">Jakarta · ★ 4.9</div>
                         <h3>Jakarta: Staycation & Kuliner</h3>
@@ -237,11 +181,8 @@
                         <div class="article-footer"></div>
                     </div>
                 </div>
-                <!-- BALI - Beach/Temple -->
                 <div class="article-card">
-                    <div class="img-wrapper">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&h=400&fit=crop" alt="Bali" onerror="this.style.display='none'">
-                    </div>
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80" alt="Bali">
                     <div class="article-content">
                         <div class="article-meta">Bali · ★ 4.9</div>
                         <h3>Bali: Pantai & Budaya</h3>
@@ -249,11 +190,8 @@
                         <div class="article-footer"></div>
                     </div>
                 </div>
-                <!-- YOGYAKARTA - Cultural -->
                 <div class="article-card">
-                    <div class="img-wrapper">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=600&h=400&fit=crop" alt="Yogyakarta" onerror="this.style.display='none'">
-                    </div>
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?auto=format&fit=crop&w=600&q=80" alt="Yogyakarta">
                     <div class="article-content">
                         <div class="article-meta">Yogyakarta · ★ 4.9</div>
                         <h3>Yogyakarta: Budaya & Sejarah</h3>
@@ -274,9 +212,9 @@
                 <p style="color: var(--muted);">Tujuan kami adalah membantu Anda merencanakan perjalanan yang lebih hemat, nyaman, dan berkesan melalui informasi yang jelas dan relevan.</p>
             </div>
             <div style="display: grid; grid-template-columns: 1fr; gap: 20px;">
-                <div class="card"><div class="platform-logo logo-traveloka" style="width:45px;height:45px;font-size:1.2rem">✦</div><h4>Inspirasi</h4><p>Ide destinasi untuk perjalanan berikutnya.</p></div>
-                <div class="card"><div class="platform-logo logo-trip" style="width:45px;height:45px;font-size:1.2rem">✓</div><h4>Tips hemat</h4><p>Strategi sederhana mengatur bujet.</p></div>
-                <div class="card"><div class="platform-logo logo-agoda" style="width:45px;height:45px;font-size:1.2rem">⌕</div><h4>Panduan praktis</h4><p>Informasi ringkas mudah diterapkan.</p></div>
+                <div class="card"><div class="card-icon">✦</div><h4>Inspirasi</h4><p>Ide destinasi untuk perjalanan berikutnya.</p></div>
+                <div class="card"><div class="card-icon">✓</div><h4>Tips hemat</h4><p>Strategi sederhana mengatur bujet.</p></div>
+                <div class="card"><div class="card-icon">⌕</div><h4>Panduan praktis</h4><p>Informasi ringkas mudah diterapkan.</p></div>
             </div>
         </div>
     </section>
@@ -288,11 +226,8 @@
                 <h2>Tips & Panduan Traveling Hemat</h2>
             </div>
             <div class="grid-3">
-                <!-- HOTEL -->
                 <div class="article-card">
-                    <div class="img-wrapper">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=400&fit=crop" alt="Hotel" onerror="this.style.display='none'">
-                    </div>
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80" alt="Hotel">
                     <div class="article-content">
                         <div class="article-meta">Tips hotel · 3 Okt 2026</div>
                         <h3>5 Cara Booking Hotel Murah di Jakarta</h3>
@@ -301,11 +236,8 @@
                         <div class="article-footer"></div>
                     </div>
                 </div>
-                <!-- STAYCATION -->
                 <div class="article-card">
-                    <div class="img-wrapper">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&h=400&fit=crop" alt="Staycation" onerror="this.style.display='none'">
-                    </div>
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80" alt="Staycation">
                     <div class="article-content">
                         <div class="article-meta">Staycation · 4 mnt baca</div>
                         <h3>Rekomendasi Staycation Hemat di Jakarta</h3>
@@ -314,11 +246,8 @@
                         <div class="article-footer"></div>
                     </div>
                 </div>
-                <!-- PESAWAT -->
                 <div class="article-card">
-                    <div class="img-wrapper">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&h=400&fit=crop" alt="Pesawat" onerror="this.style.display='none'">
-                    </div>
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=600&q=80" alt="Pesawat">
                     <div class="article-content">
                         <div class="article-meta">Tiket pesawat · 6 mnt baca</div>
                         <h3>Cara Mendapatkan Tiket Promo ke Bali</h3>
@@ -327,11 +256,8 @@
                         <div class="article-footer"></div>
                     </div>
                 </div>
-                <!-- TRAVEL -->
                 <div class="article-card">
-                    <div class="img-wrapper">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1584810359583-96fc3448beaa?w=600&h=400&fit=crop" alt="Yogyakarta" onerror="this.style.display='none'">
-                    </div>
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1584810359583-96fc3448beaa?auto=format&fit=crop&w=600&q=80" alt="Yogyakarta">
                     <div class="article-content">
                         <div class="article-meta">Panduan · 7 mnt baca</div>
                         <h3>Liburan ke Yogyakarta Budget 2 Juta</h3>
