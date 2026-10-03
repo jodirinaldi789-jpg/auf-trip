@@ -38,7 +38,6 @@
         .btn-orange { background: var(--orange); }
         .btn-orange:hover { background: #e55a2b; }
         
-        /* PERBAIKAN TOMBOL HAMBURGER */
         .menu-toggle { 
             display: none; 
             background: white; 
@@ -76,7 +75,25 @@
 
         .card { background: white; border: 1px solid var(--border); border-radius: 20px; padding: 25px; transition: transform 0.3s, box-shadow 0.3s; }
         .card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .card-icon { width: 45px; height: 45px; background: var(--light); color: var(--primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.2rem; margin-bottom: 15px; }
+        
+        /* LOGO PLATFORM */
+        .platform-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            font-weight: 900;
+            font-size: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        .logo-traveloka { background: linear-gradient(135deg, #00a0dc, #00d4aa); color: white; }
+        .logo-trip { background: linear-gradient(135deg, #0066cc, #00a8e8); color: white; }
+        .logo-agoda { background: linear-gradient(135deg, #5e3fd3, #9b59b6); color: white; }
+        .logo-tiket { background: linear-gradient(135deg, #ff6b35, #ff8c42); color: white; }
+        
         .card h4 { margin-bottom: 10px; font-size: 1.1rem; }
         .card p { color: var(--muted); font-size: 0.9rem; margin-bottom: 15px; }
         
@@ -156,10 +173,26 @@
                 <h2>Partner Booking Terpercaya</h2>
             </div>
             <div class="grid-4">
-                <div class="card"><div class="card-icon">T</div><h4>Traveloka</h4><p>Hotel, tiket, dan aktivitas.</p></div>
-                <div class="card"><div class="card-icon">T</div><h4>Trip.com</h4><p>Penerbangan & akomodasi global.</p></div>
-                <div class="card"><div class="card-icon">A</div><h4>Agoda</h4><p>Rekomendasi hotel & staycation.</p></div>
-                <div class="card"><div class="card-icon">K</div><h4>Klook</h4><p>Tiket atraksi & aktivitas seru.</p></div>
+                <div class="card">
+                    <div class="platform-logo logo-traveloka">T</div>
+                    <h4>Traveloka</h4>
+                    <p>Hotel, tiket, dan aktivitas.</p>
+                </div>
+                <div class="card">
+                    <div class="platform-logo logo-trip">T</div>
+                    <h4>Trip.com</h4>
+                    <p>Penerbangan & akomodasi global.</p>
+                </div>
+                <div class="card">
+                    <div class="platform-logo logo-agoda">A</div>
+                    <h4>Agoda</h4>
+                    <p>Rekomendasi hotel & staycation.</p>
+                </div>
+                <div class="card">
+                    <div class="platform-logo logo-tiket">T</div>
+                    <h4>Tiket.com</h4>
+                    <p>Tiket atraksi & aktivitas seru.</p>
+                </div>
             </div>
             <p style="text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 30px;">Kami adalah affiliate partner resmi dari platform di atas.</p>
         </div>
@@ -212,9 +245,9 @@
                 <p style="color: var(--muted);">Tujuan kami adalah membantu Anda merencanakan perjalanan yang lebih hemat, nyaman, dan berkesan melalui informasi yang jelas dan relevan.</p>
             </div>
             <div style="display: grid; grid-template-columns: 1fr; gap: 20px;">
-                <div class="card"><div class="card-icon">✦</div><h4>Inspirasi</h4><p>Ide destinasi untuk perjalanan berikutnya.</p></div>
-                <div class="card"><div class="card-icon">✓</div><h4>Tips hemat</h4><p>Strategi sederhana mengatur bujet.</p></div>
-                <div class="card"><div class="card-icon">⌕</div><h4>Panduan praktis</h4><p>Informasi ringkas mudah diterapkan.</p></div>
+                <div class="card"><div class="platform-logo logo-traveloka" style="width:45px;height:45px;font-size:1.2rem">✦</div><h4>Inspirasi</h4><p>Ide destinasi untuk perjalanan berikutnya.</p></div>
+                <div class="card"><div class="platform-logo logo-trip" style="width:45px;height:45px;font-size:1.2rem">✓</div><h4>Tips hemat</h4><p>Strategi sederhana mengatur bujet.</p></div>
+                <div class="card"><div class="platform-logo logo-agoda" style="width:45px;height:45px;font-size:1.2rem">⌕</div><h4>Panduan praktis</h4><p>Informasi ringkas mudah diterapkan.</p></div>
             </div>
         </div>
     </section>
