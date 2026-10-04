@@ -30,7 +30,8 @@
         
         header { position: sticky; top: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); z-index: 100; }
         .nav-container { display: flex; justify-content: space-between; align-items: center; height: 70px; position: relative; }
-        .logo { display: flex; align-items: center; gap: 10px; font-size: 1.2rem; color: var(--primary); }
+        .logo { display: flex; align-items: center; gap: 10px; color: var(--primary); }
+        .logo .brand-text { font-size: 24px; }
         .logo-icon { width: 38px; height: 38px; background: linear-gradient(135deg, var(--primary), #1c86df); color: white; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
         .nav-links { display: flex; gap: 25px; align-items: center; }
         .nav-links a { font-weight: 600; font-size: 0.9rem; color: #425675; transition: color 0.3s; }
@@ -62,7 +63,7 @@
             text-align: left; 
             min-height: 500px;
         }
-        .hero-partner { font-size: 18px; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 20px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: white; }
+        .hero-partner { font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 20px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: white; }
         .hero h1 { color: white; font-size: 1.08rem; font-weight: 400; margin-bottom: 20px; font-family: 'Inter', sans-serif; }
         .hero p { font-size: 1.05rem; margin-bottom: 30px; color: #e1efff; max-width: 600px; }
         .trust-badges { display: flex; gap: 20px; flex-wrap: wrap; font-size: 0.9rem; font-weight: 600; margin-top: 30px; }
@@ -82,7 +83,7 @@
         .card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
 
         /* ============================================
-           TRAVEL PARTNERS (dari MANUS) — dengan SVG logo
+           TRAVEL PARTNERS — border biru tua 2px
            ============================================ */
         .travel-partners {
             padding: 72px 20px;
@@ -128,14 +129,14 @@
             min-width: 0;
             flex-direction: column;
             padding: 24px;
-            border: 1px solid #dce5f1;
+            border: 2px solid #052b69;
             border-radius: 18px;
             background: #ffffff;
             box-shadow: 0 8px 24px rgba(7, 59, 143, 0.06);
             transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
         }
         .travel-partner-card:hover {
-            border-color: #b9cfee;
+            border-color: #073b8f;
             box-shadow: 0 14px 32px rgba(7, 59, 143, 0.12);
             transform: translateY(-4px);
         }
@@ -324,7 +325,7 @@
     </section>
 
     <!-- ============================================
-         PARTNER BOOKING TRAVEL (dari MANUS)
+         PARTNER BOOKING TRAVEL — border biru tua 2px
          ============================================ -->
     <section class="travel-partners" id="partner-booking" aria-labelledby="partner-booking-title">
       <div class="travel-partners__container">
@@ -545,7 +546,7 @@
             <div>
                 <h3>Legal</h3>
                 <ul>
-                    <li><a href="#dc">Affiliate Disclosure</a></li>
+                    <li><a href="#dc">Tentang AUF Trip</a></li>
                     <li><a href="#pv">Kebijakan Privasi</a></li>
                     <li><a href="#kontak">Kontak Kami</a></li>
                 </ul>
@@ -556,10 +557,12 @@
             </div>
         </div>
         <div class="disclosure" id="dc">
-            <p>📢 <strong>Affiliate Disclosure:</strong> <span class="brand-text">AUF Trip</span> adalah peserta dalam berbagai program afiliasi termasuk Involve Asia. Kami menerima komisi ketika Anda melakukan pemesanan melalui link affiliate di website ini, tanpa biaya tambahan bagi Anda.</p>
+            <p style="font-family: 'Poppins', sans-serif; font-size: 1.5rem; font-weight: 900; color: white;"><strong>AUF Trip</strong> - Solusi Cerdas Booking Hotel & Tiket Termurah.</p>
+            <p style="margin-top: 12px; font-weight: 700;">Kami membantu Anda membandingkan harga terbaik dari berbagai platform travel resmi dalam satu tempat. Tujuannya satu: memastikan Anda mendapatkan penawaran paling efisien dan transparan untuk setiap perjalanan Anda.</p>
         </div>
         <div class="disclosure" id="pv" style="border-top: none;">
-            <p><strong>Kebijakan Privasi:</strong> <span class="brand-text">AUF Trip</span> menghormati privasi pengunjung. Data yang dikirim melalui email atau formulir digunakan untuk menjawab pertanyaan dan tidak dijual kepada pihak lain.</p>
+            <p style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 900; color: #ffffff;"><strong>Kebijakan Privasi & Keamanan Data</strong></p>
+            <p style="margin-top: 12px; font-weight: 700;">Di <strong>AUF Trip</strong>, privasi Anda adalah prioritas utama kami. Kami berkomitmen penuh untuk melindungi kerahasiaan data pribadi Anda. Setiap informasi yang Anda kirimkan melalui email atau formulir kontak, hanya akan kami gunakan untuk keperluan komunikasi dan bantuan pemesanan, dan tidak akan pernah kami bagikan kepada pihak ketiga.</p>
         </div>
         <p class="copyright">© 2026 <span class="brand-text">AUF Trip</span>. All Rights Reserved.</p>
     </div>
